@@ -1,0 +1,508 @@
+<!DOCTYPE html>
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Toshiba Innovation - Simulator</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;family=Inter:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-tertiary-container": "#ff614d",
+                        "surface-container-highest": "#e4e2e1",
+                        "on-secondary-fixed-variant": "#005225",
+                        "on-tertiary-fixed-variant": "#930000",
+                        "tertiary-container": "#650000",
+                        "surface-container": "#f0eded",
+                        "error": "#ba1a1a",
+                        "inverse-primary": "#abc7ff",
+                        "on-secondary-container": "#007236",
+                        "tertiary": "#3d0000",
+                        "on-primary": "#ffffff",
+                        "primary": "#00193c",
+                        "primary-container": "#002d62",
+                        "surface-container-lowest": "#ffffff",
+                        "surface-container-low": "#f6f3f2",
+                        "secondary-fixed": "#78fc9c",
+                        "on-error": "#ffffff",
+                        "inverse-surface": "#303030",
+                        "surface-bright": "#fbf9f8",
+                        "primary-fixed-dim": "#abc7ff",
+                        "outline-variant": "#c4c6d1",
+                        "on-primary-fixed": "#001b3f",
+                        "on-background": "#1b1c1c",
+                        "surface-dim": "#dcd9d9",
+                        "tertiary-fixed": "#ffdad4",
+                        "outline": "#747781",
+                        "surface-container-high": "#eae8e7",
+                        "on-secondary": "#ffffff",
+                        "surface-variant": "#e4e2e1",
+                        "surface-tint": "#3e5e95",
+                        "on-surface-variant": "#43474f",
+                        "on-primary-fixed-variant": "#24467c",
+                        "on-error-container": "#93000a",
+                        "on-tertiary-fixed": "#410000",
+                        "on-tertiary": "#ffffff",
+                        "secondary-fixed-dim": "#5adf82",
+                        "primary-fixed": "#d7e2ff",
+                        "background": "#fbf9f8",
+                        "on-surface": "#1b1c1c",
+                        "secondary-container": "#75f999",
+                        "surface": "#fbf9f8",
+                        "inverse-on-surface": "#f3f0f0",
+                        "on-primary-container": "#7796d1",
+                        "secondary": "#006d33",
+                        "on-secondary-fixed": "#00210b",
+                        "tertiary-fixed-dim": "#ffb4a8",
+                        "error-container": "#ffdad6"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "fontFamily": {
+                        "headline": ["Space Grotesk"],
+                        "body": ["Inter"],
+                        "label": ["Inter"]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .radar-grid {
+            background-image: radial-gradient(circle, #c4c6d1 1px, transparent 1px);
+            background-size: 20px 20px;
+        }
+        /* Chiến lược active: border + glow, không fill nền */
+        .preset-btn {
+            transition: all 0.2s ease;
+            border: 2px solid transparent;
+        }
+        .preset-btn.active {
+            border-color: #006d33;
+            background-color: transparent !important;
+            box-shadow: 0 0 0 2px rgba(0,109,51,0.15);
+            color: inherit;
+        }
+        .preset-btn.active .material-symbols-outlined {
+            color: #006d33;
+        }
+        /* Radar node animation */
+        .radar-node {
+            transition: all 0.3s cubic-bezier(0.2, 0.9, 0.4, 1);
+        }
+        /* Load bar animation */
+        .load-bar {
+            transition: height 0.5s ease;
+        }
+        /* Thu nhỏ radar hơn nữa */
+        .radar-svg-container {
+            max-width: 250px;
+            margin: 0 auto;
+        }
+        /* Tooltip custom style - giữ nguyên từ snippet nhưng đảm bảo hiển thị đẹp */
+        .tooltip-content {
+            transition: opacity 0.15s;
+        }
+    </style>
+</head>
+<body class="bg-background text-on-surface font-body selection:bg-secondary-container">
+<!-- TopNavBar (giữ nguyên) -->
+<nav class="fixed top-0 w-full z-50 bg-[#f6f3f2] dark:bg-[#252626]">
+<div class="flex justify-between items-center px-12 py-6 w-full max-w-screen-2xl mx-auto">
+<div class="text-2xl font-bold tracking-tighter text-[#00193c] dark:text-white font-headline">
+                Toshiba Innovation
+            </div>
+<div class="hidden md:flex gap-8 items-center">
+<a class="font-headline tracking-tight font-bold text-[#43474f] dark:text-[#e4e2e1] pb-1 hover:text-[#002d62] dark:hover:text-[#78fc9c] transition-colors duration-300" href="index.html">Home</a>
+<a class="font-headline tracking-tight font-bold text-[#00193c] dark:text-[#78fc9c] border-b-2 border-[#006d33] pb-1" href="simulator.html">Simulator</a>
+<a class="font-headline tracking-tight font-bold text-[#43474f] dark:text-[#e4e2e1] pb-1 hover:text-[#002d62] dark:hover:text-[#78fc9c] transition-colors duration-300" href="theory.html">Theory</a>
+<a class="font-headline tracking-tight font-bold text-[#43474f] dark:text-[#e4e2e1] pb-1 hover:text-[#002d62] dark:hover:text-[#78fc9c] transition-colors duration-300" href="canvas.html">Canvas</a>
+<a class="font-headline tracking-tight font-bold text-[#43474f] dark:text-[#e4e2e1] pb-1 hover:text-[#002d62] dark:hover:text-[#78fc9c] transition-colors duration-300" href="about.html">About</a>
+<a class="font-headline tracking-tight font-bold text-[#43474f] dark:text-[#e4e2e1] pb-1 hover:text-[#002d62] dark:hover:text-[#78fc9c] transition-colors duration-300" href="contact.html">Contact</a>
+</div>
+<button class="bg-primary-container text-white px-6 py-2.5 rounded-lg font-headline font-bold scale-95 duration-200 hover:bg-primary" onclick="window.location.href='simulator.html'">
+                Bắt đầu
+            </button>
+</div>
+</nav>
+<main class="pt-28 pb-12 px-6 lg:px-12 max-w-screen-2xl mx-auto min-h-screen">
+<header class="mb-10">
+<h1 class="text-4xl font-headline font-bold text-primary tracking-tight">Trình giả lập lộ trình chiến lược</h1>
+<p class="text-on-surface-variant mt-2 max-w-2xl">Kiến tạo tương lai tổ chức của bạn bằng cách tinh chỉnh các tham số đổi mới cốt lõi. Mô hình hóa những kết quả phức tạp với hệ thống giả lập công nghiệp có độ chính xác cao.</p>
+</header>
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+<!-- Left Column: Strategy Presets (25%) -->
+<section class="lg:col-span-3 flex flex-col gap-4">
+<div class="flex items-center gap-2 mb-2 px-1">
+<span class="material-symbols-outlined text-primary" style="font-variation-settings: 'FILL' 1;">layers</span>
+<h2 class="font-headline font-bold text-lg uppercase tracking-wider text-on-surface-variant">Chiến lược</h2>
+</div>
+<button class="preset-btn group p-5 bg-surface-container-low rounded-xl text-left transition-all duration-300 hover:bg-surface-container-high hover:translate-x-1" data-preset="Song hành ">
+<div class="flex justify-between items-start mb-1">
+<span class="text-xs font-bold tracking-widest uppercase opacity-60">Model Alpha</span>
+<span class="material-symbols-outlined text-secondary-fixed opacity-0 group-[.active]:opacity-100">check_circle</span>
+</div>
+<h3 class="font-headline text-xl font-bold">Song hành </h3>
+<p class="text-sm opacity-80 mt-2 leading-relaxed">Cân bằng giữa khai thác và khám phá để tăng trưởng bền vững.</p>
+</button>
+<button class="preset-btn group p-5 bg-surface-container-low rounded-xl text-left transition-all duration-300 hover:bg-surface-container-high hover:translate-x-1" data-preset="Tuần tự ">
+<div class="flex justify-between items-start mb-1">
+<span class="text-xs font-bold tracking-widest uppercase opacity-60">Model Beta</span>
+<span class="material-symbols-outlined text-secondary-fixed opacity-0 group-[.active]:opacity-100">check_circle</span>
+</div>
+<h3 class="font-headline text-xl font-bold text-primary">Tuần tự </h3>
+<p class="text-sm text-on-surface-variant mt-2 leading-relaxed">Tiến hóa từng bước từ nền tảng cũ sang đổi mới sáng tạo.</p>
+</button>
+<button class="preset-btn group p-5 bg-surface-container-low rounded-xl text-left transition-all duration-300 hover:bg-surface-container-high hover:translate-x-1" data-preset="Dẫn đầu ">
+<div class="flex justify-between items-start mb-1">
+<span class="text-xs font-bold tracking-widest uppercase opacity-60">Model Gamma</span>
+<span class="material-symbols-outlined text-secondary-fixed opacity-0 group-[.active]:opacity-100">check_circle</span>
+</div>
+<h3 class="font-headline text-xl font-bold text-primary">Dẫn đầu </h3>
+<p class="text-sm text-on-surface-variant mt-2 leading-relaxed">Thâm nhập thị trường mạnh mẽ với các công nghệ mang tính đột phá.</p>
+</button>
+<button class="preset-btn group p-5 bg-surface-container-low rounded-xl text-left transition-all duration-300 hover:bg-surface-container-high hover:translate-x-1" data-preset="Theo sau ">
+<div class="flex justify-between items-start mb-1">
+<span class="text-xs font-bold tracking-widest uppercase opacity-60">Model Delta</span>
+<span class="material-symbols-outlined text-secondary-fixed opacity-0 group-[.active]:opacity-100">check_circle</span>
+</div>
+<h3 class="font-headline text-xl font-bold text-primary">Theo sau </h3>
+<p class="text-sm text-on-surface-variant mt-2 leading-relaxed">Thích ứng nhanh chóng và mở rộng quy mô các đổi mới đã được chứng thực.</p>
+</button>
+<button class="preset-btn group p-5 bg-surface-container-low rounded-xl text-left transition-all duration-300 hover:bg-surface-container-high hover:translate-x-1" data-preset="Bắt chước">
+<div class="flex justify-between items-start mb-1">
+<span class="text-xs font-bold tracking-widest uppercase opacity-60">Model Epsilon</span>
+<span class="material-symbols-outlined text-secondary-fixed opacity-0 group-[.active]:opacity-100">check_circle</span>
+</div>
+<h3 class="font-headline text-xl font-bold text-primary">Bắt chước</h3>
+<p class="text-sm text-on-surface-variant mt-2 leading-relaxed">Sao chép hiệu quả các cấu trúc thị trường hiện hữu.</p>
+</button>
+</section>
+<!-- Center Column: Parameter Sliders (50%) -->
+<section class="lg:col-span-6 flex flex-col gap-8">
+<div class="bg-surface-container-low/50 rounded-2xl p-8 backdrop-blur-xl border border-outline-variant/15">
+<div class="flex items-center justify-between mb-8">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary">tune</span>
+<h2 class="font-headline font-bold text-lg uppercase tracking-wider text-on-surface-variant">Thông Số Cốt Lõi</h2>
+</div>
+<span class="text-xs font-medium text-on-surface-variant bg-surface-container-highest px-3 py-1 rounded-full">10 biến hoạt động</span>
+</div>
+<!-- Grid thông số với tooltip (tích hợp từ snippet, giữ nguyên chức năng và layout) -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-8">
+    <!-- INC -->
+    <div class="flex flex-col gap-3 group">
+        <div class="flex justify-between items-end">
+            <div class="flex items-center gap-1">
+                <label class="text-sm font-bold text-primary font-headline tracking-wide uppercase">INC</label>
+                <span class="text-[11px] text-on-surface-variant/70">(Incremental)</span>
+                <div class="relative flex items-center group/tip cursor-help">
+                    <span class="material-symbols-outlined text-[14px] text-slate-400 hover:text-blue-500 transition-colors">help_outline</span>
+                    <div class="absolute bottom-full left-0 mb-2 hidden group-hover/tip:block z-50 w-64 p-2 bg-slate-800 text-white text-[12px] rounded-lg shadow-xl border border-slate-700">
+                        Mức đầu tư Incremental (INC): Đầu tư cải tiến dần dần, tối ưu hóa quy trình và sản phẩm hiện có.
+                        <div class="absolute top-full left-2 -mt-1 border-4 border-transparent border-t-slate-800"></div>
+                    </div>
+                </div>
+            </div>
+            <span class="text-sm font-mono font-bold text-secondary inc-val">85%</span>
+        </div>
+        <input class="w-full h-1.5 bg-outline-variant/30 rounded-full appearance-none cursor-pointer accent-secondary param-slider" type="range" value="85" min="0" max="100" step="1" data-param="INC"/>
+    </div>
+
+    <!-- RAD -->
+    <div class="flex flex-col gap-3 group">
+        <div class="flex justify-between items-end">
+            <div class="flex items-center gap-1">
+                <label class="text-sm font-bold text-primary font-headline tracking-wide uppercase">RAD</label>
+                <span class="text-[11px] text-on-surface-variant/70">(Radical)</span>
+                <div class="relative flex items-center group/tip cursor-help">
+                    <span class="material-symbols-outlined text-[14px] text-slate-400 hover:text-blue-500 transition-colors">help_outline</span>
+                    <div class="absolute bottom-full left-0 mb-2 hidden group-hover/tip:block z-50 w-64 p-2 bg-slate-800 text-white text-[12px] rounded-lg shadow-xl">
+                        Mức đầu tư Radical (RAD): Đầu tư đổi mới đột phá, phát triển công nghệ mới, thay đổi mô hình kinh doanh.
+                        <div class="absolute top-full left-2 -mt-1 border-4 border-transparent border-t-slate-800"></div>
+                    </div>
+                </div>
+            </div>
+            <span class="text-sm font-mono font-bold text-secondary rad-val">42%</span>
+        </div>
+        <input class="w-full h-1.5 bg-outline-variant/30 rounded-full appearance-none cursor-pointer accent-secondary param-slider" type="range" value="42" min="0" max="100" step="1" data-param="RAD"/>
+    </div>
+
+    <!-- SPD -->
+    <div class="flex flex-col gap-3 group">
+        <div class="flex justify-between items-end">
+            <div class="flex items-center gap-1">
+                <label class="text-sm font-bold text-primary font-headline tracking-wide uppercase">SPD</label>
+                <span class="text-[11px] text-on-surface-variant/70">(Speed)</span>
+                <div class="relative flex items-center group/tip cursor-help">
+                    <span class="material-symbols-outlined text-[14px] text-slate-400 hover:text-blue-500 transition-colors">help_outline</span>
+                    <div class="absolute bottom-full left-0 mb-2 hidden group-hover/tip:block z-50 w-64 p-2 bg-slate-800 text-white text-[12px] rounded-lg shadow-xl">
+                        Tốc độ đổi mới (Innovation Speed): Tốc độ triển khai và chu kỳ ra mắt sản phẩm mới; SPD cao giúp phản ứng nhanh với thị trường.
+                        <div class="absolute top-full left-2 -mt-1 border-4 border-transparent border-t-slate-800"></div>
+                    </div>
+                </div>
+            </div>
+            <span class="text-sm font-mono font-bold text-secondary spd-val">91%</span>
+        </div>
+        <input class="w-full h-1.5 bg-outline-variant/30 rounded-full appearance-none cursor-pointer accent-secondary param-slider" type="range" value="91" min="0" max="100" step="1" data-param="SPD"/>
+    </div>
+
+    <!-- SEN -->
+    <div class="flex flex-col gap-3 group">
+        <div class="flex justify-between items-end">
+            <div class="flex items-center gap-1">
+                <label class="text-sm font-bold text-primary font-headline tracking-wide uppercase">SEN</label>
+                <span class="text-[11px] text-on-surface-variant/70">(Sensitivity)</span>
+                <div class="relative flex items-center group/tip cursor-help">
+                    <span class="material-symbols-outlined text-[14px] text-slate-400 hover:text-blue-500 transition-colors">help_outline</span>
+                    <div class="absolute bottom-full left-0 mb-2 hidden group-hover/tip:block z-50 w-64 p-2 bg-slate-800 text-white text-[12px] rounded-lg shadow-xl">
+                        Sensing Capability (SEN): Khả năng nhận diện cơ hội/thách thức thị trường và công nghệ; SEN mạnh giúp giảm rủi ro chiến lược.
+                        <div class="absolute top-full left-2 -mt-1 border-4 border-transparent border-t-slate-800"></div>
+                    </div>
+                </div>
+            </div>
+            <span class="text-sm font-mono font-bold text-secondary sen-val">15%</span>
+        </div>
+        <input class="w-full h-1.5 bg-outline-variant/30 rounded-full appearance-none cursor-pointer accent-secondary param-slider" type="range" value="15" min="0" max="100" step="1" data-param="SEN"/>
+    </div>
+
+    <!-- SEI -->
+    <div class="flex flex-col gap-3 group">
+        <div class="flex justify-between items-end">
+            <div class="flex items-center gap-1">
+                <label class="text-sm font-bold text-primary font-headline tracking-wide uppercase">SEI</label>
+                <span class="text-[11px] text-on-surface-variant/70">(Seismicity)</span>
+                <div class="relative flex items-center group/tip cursor-help">
+                    <span class="material-symbols-outlined text-[14px] text-slate-400 hover:text-blue-500 transition-colors">help_outline</span>
+                    <div class="absolute bottom-full left-0 mb-2 hidden group-hover/tip:block z-50 w-64 p-2 bg-slate-800 text-white text-[12px] rounded-lg shadow-xl">
+                        Seizing Capability (SEI): Khả năng nắm bắt và thương mại hóa cơ hội nhanh chóng; SEI cao giúp biến ý tưởng thành lợi thế cạnh tranh.
+                        <div class="absolute top-full left-2 -mt-1 border-4 border-transparent border-t-slate-800"></div>
+                    </div>
+                </div>
+            </div>
+            <span class="text-sm font-mono font-bold text-secondary sei-val">64%</span>
+        </div>
+        <input class="w-full h-1.5 bg-outline-variant/30 rounded-full appearance-none cursor-pointer accent-secondary param-slider" type="range" value="64" min="0" max="100" step="1" data-param="SEI"/>
+    </div>
+
+    <!-- TRA -->
+    <div class="flex flex-col gap-3 group">
+        <div class="flex justify-between items-end">
+            <div class="flex items-center gap-1">
+                <label class="text-sm font-bold text-primary font-headline tracking-wide uppercase">TRA</label>
+                <span class="text-[11px] text-on-surface-variant/70">(Trajectory)</span>
+                <div class="relative flex items-center group/tip cursor-help">
+                    <span class="material-symbols-outlined text-[14px] text-slate-400 hover:text-blue-500 transition-colors">help_outline</span>
+                    <div class="absolute bottom-full left-0 mb-2 hidden group-hover/tip:block z-50 w-64 p-2 bg-slate-800 text-white text-[12px] rounded-lg shadow-xl">
+                        Transforming Capability (TRA): Khả năng tái cấu trúc tổ chức, quy trình và mô hình kinh doanh để thích ứng với đổi mới.
+                        <div class="absolute top-full left-2 -mt-1 border-4 border-transparent border-t-slate-800"></div>
+                    </div>
+                </div>
+            </div>
+            <span class="text-sm font-mono font-bold text-secondary tra-val">77%</span>
+        </div>
+        <input class="w-full h-1.5 bg-outline-variant/30 rounded-full appearance-none cursor-pointer accent-secondary param-slider" type="range" value="77" min="0" max="100" step="1" data-param="TRA"/>
+    </div>
+
+    <!-- LEA -->
+    <div class="flex flex-col gap-3 group">
+        <div class="flex justify-between items-end">
+            <div class="flex items-center gap-1">
+                <label class="text-sm font-bold text-primary font-headline tracking-wide uppercase">LEA</label>
+                <span class="text-[11px] text-on-surface-variant/70">(Learning)</span>
+                <div class="relative flex items-center group/tip cursor-help">
+                    <span class="material-symbols-outlined text-[14px] text-slate-400 hover:text-blue-500 transition-colors">help_outline</span>
+                    <div class="absolute bottom-full left-0 mb-2 hidden group-hover/tip:block z-50 w-64 p-2 bg-slate-800 text-white text-[12px] rounded-lg shadow-xl">
+                        Learning / Absorptive Capacity (LEA): Khả năng học hỏi, hấp thụ và tích hợp kiến thức bên ngoài; nền tảng cho đổi mới bền vững.
+                        <div class="absolute top-full left-2 -mt-1 border-4 border-transparent border-t-slate-800"></div>
+                    </div>
+                </div>
+            </div>
+            <span class="text-sm font-mono font-bold text-secondary lea-val">88%</span>
+        </div>
+        <input class="w-full h-1.5 bg-outline-variant/30 rounded-full appearance-none cursor-pointer accent-secondary param-slider" type="range" value="88" min="0" max="100" step="1" data-param="LEA"/>
+    </div>
+
+    <!-- FIR -->
+    <div class="flex flex-col gap-3 group">
+        <div class="flex justify-between items-end">
+            <div class="flex items-center gap-1">
+                <label class="text-sm font-bold text-primary font-headline tracking-wide uppercase">FIR</label>
+                <span class="text-[11px] text-on-surface-variant/70">(Firmness)</span>
+                <div class="relative flex items-center group/tip cursor-help">
+                    <span class="material-symbols-outlined text-[14px] text-slate-400 hover:text-blue-500 transition-colors">help_outline</span>
+                    <div class="absolute bottom-full left-0 mb-2 hidden group-hover/tip:block z-50 w-64 p-2 bg-slate-800 text-white text-[12px] rounded-lg shadow-xl">
+                        First-mover Orientation (FIR): Xu hướng dẫn đầu thị trường, chấp nhận rủi ro để tạo lợi thế tiên phong.
+                        <div class="absolute top-full left-2 -mt-1 border-4 border-transparent border-t-slate-800"></div>
+                    </div>
+                </div>
+            </div>
+            <span class="text-sm font-mono font-bold text-secondary fir-val">50%</span>
+        </div>
+        <input class="w-full h-1.5 bg-outline-variant/30 rounded-full appearance-none cursor-pointer accent-secondary param-slider" type="range" value="50" min="0" max="100" step="1" data-param="FIR"/>
+    </div>
+
+    <!-- COP -->
+    <div class="flex flex-col gap-3 group">
+        <div class="flex justify-between items-end">
+            <div class="flex items-center gap-1">
+                <label class="text-sm font-bold text-primary font-headline tracking-wide uppercase">COP</label>
+                <span class="text-[11px] text-on-surface-variant/70">(Cooperation)</span>
+                <div class="relative flex items-center group/tip cursor-help">
+                    <span class="material-symbols-outlined text-[14px] text-slate-400 hover:text-blue-500 transition-colors">help_outline</span>
+                    <div class="absolute bottom-full left-0 mb-2 hidden group-hover/tip:block z-50 w-64 p-2 bg-slate-800 text-white text-[12px] rounded-lg shadow-xl">
+                        Mức độ hợp tác liên minh (COP): Mức độ hợp tác với các đối tác quốc tế, viện nghiên cứu; tăng khả năng tiếp cận tri thức.
+                        <div class="absolute top-full left-2 -mt-1 border-4 border-transparent border-t-slate-800"></div>
+                    </div>
+                </div>
+            </div>
+            <span class="text-sm font-mono font-bold text-secondary cop-val">30%</span>
+        </div>
+        <input class="w-full h-1.5 bg-outline-variant/30 rounded-full appearance-none cursor-pointer accent-secondary param-slider" type="range" value="30" min="0" max="100" step="1" data-param="COP"/>
+    </div>
+
+    <!-- RES -->
+    <div class="flex flex-col gap-3 group">
+        <div class="flex justify-between items-end">
+            <div class="flex items-center gap-1">
+                <label class="text-sm font-bold text-primary font-headline tracking-wide uppercase">RES</label>
+                <span class="text-[11px] text-on-surface-variant/70">(Resources)</span>
+                <div class="relative flex items-center group/tip cursor-help">
+                    <span class="material-symbols-outlined text-[14px] text-slate-400 hover:text-blue-500 transition-colors">help_outline</span>
+                    <div class="absolute bottom-full left-0 mb-2 hidden group-hover/tip:block z-50 w-64 p-2 bg-slate-800 text-white text-[12px] rounded-lg shadow-xl">
+                        Nguồn lực (RES): Nguồn lực tài chính, nhân sự, công nghệ mà hệ thống có thể huy động cho hoạt động đổi mới.
+                        <div class="absolute top-full left-2 -mt-1 border-4 border-transparent border-t-slate-800"></div>
+                    </div>
+                </div>
+            </div>
+            <span class="text-sm font-mono font-bold text-secondary res-val">55%</span>
+        </div>
+        <input class="w-full h-1.5 bg-outline-variant/30 rounded-full appearance-none cursor-pointer accent-secondary param-slider" type="range" value="55" min="0" max="100" step="1" data-param="RES"/>
+    </div>
+</div>
+</div>
+<!-- THÊM MỚI: 3 chỉ số hiệu quả, rủi ro, tải trọng (giữ nguyên layout, không gộp) -->
+<div class="bg-surface-container-low rounded-2xl p-6 border border-outline-variant/15">
+<div class="flex items-center gap-2 mb-6">
+<span class="material-symbols-outlined text-primary">monitoring</span>
+<h2 class="font-headline font-bold text-lg uppercase tracking-wider text-on-surface-variant">Chỉ số hệ thống</h2>
+</div>
+<div class="space-y-5">
+    <!-- Hàng 1: Hiệu quả và Rủi ro (2 cột) -->
+    <div class="grid grid-cols-2 gap-5">
+        <!-- Hiệu quả -->
+        <div class="bg-white/40 rounded-xl p-4 shadow-sm">
+            <p class="text-xs font-bold text-on-surface-variant/70 uppercase tracking-wider">Hiệu quả</p>
+            <div class="flex items-baseline gap-1 mt-1">
+                <span class="text-2xl font-headline font-bold text-primary" id="efficiencyScore">84%</span>
+            </div>
+            <div class="w-full h-2 bg-outline-variant/20 rounded-full mt-3 overflow-hidden">
+                <div id="efficiencyBar" class="h-full bg-secondary transition-all duration-500" style="width:84%"></div>
+            </div>
+        </div>
+        <!-- Rủi ro hệ thống -->
+        <div class="bg-white/40 rounded-xl p-4 shadow-sm">
+            <p class="text-xs font-bold text-on-surface-variant/70 uppercase tracking-wider">Rủi ro hệ thống</p>
+            <div class="flex items-baseline gap-1 mt-1">
+                <span class="text-2xl font-headline font-bold text-on-tertiary-container" id="riskScore">12%</span>
+            </div>
+            <div class="w-full h-2 bg-outline-variant/20 rounded-full mt-3 overflow-hidden">
+                <div id="riskBar" class="h-full bg-error transition-all duration-500" style="width:12%"></div>
+            </div>
+        </div>
+    </div>
+    <!-- Hàng 2: Tải trọng hạ tầng (full width, kéo dài biểu đồ) -->
+    <div class="bg-white/40 rounded-xl p-4 shadow-sm">
+        <div class="flex justify-between items-center">
+            <p class="text-xs font-bold text-on-surface-variant/70 uppercase tracking-wider">Tải trọng hạ tầng</p>
+            <span class="text-xs font-mono text-on-surface-variant" id="loadValue">7.2 TB/s</span>
+        </div>
+        <!-- Tăng chiều cao và số cột biểu đồ -->
+        <div class="flex items-end gap-0.5 h-24 mt-2" id="loadBarsContainer"></div>
+    </div>
+</div>
+</div>
+</section>
+<!-- Right Column: Real-time Preview & Action (25%) -->
+<section class="lg:col-span-3 flex flex-col gap-6">
+<div class="bg-surface-container-low rounded-2xl p-6 flex flex-col gap-4 relative overflow-hidden">
+<div class="absolute top-0 left-0 w-1 h-full bg-secondary"></div>
+<div class="flex items-center gap-2 mb-1">
+<span class="material-symbols-outlined text-primary">analytics</span>
+<h2 class="font-headline font-bold text-lg uppercase tracking-wider text-on-surface-variant">Real-time Preview</h2>
+</div>
+<!-- Radar Chart động (10 đỉnh) - thu nhỏ hơn nữa -->
+<div class="radar-svg-container w-full">
+<svg id="radarChart" class="w-full h-auto drop-shadow-[0_0_15px_rgba(117,249,153,0.3)]" viewBox=" -10 -10 120 120" preserveAspectRatio="xMidYMid meet">
+<!-- Vòng tròn tham chiếu -->
+<circle cx="50" cy="50" r="45" fill="none" stroke="#c4c6d1" stroke-width="0.5" stroke-dasharray="2 2" opacity="0.5"/>
+<circle cx="50" cy="50" r="30" fill="none" stroke="#c4c6d1" stroke-width="0.5" stroke-dasharray="2 2" opacity="0.5"/>
+<circle cx="50" cy="50" r="15" fill="none" stroke="#c4c6d1" stroke-width="0.5" stroke-dasharray="2 2" opacity="0.5"/>
+<!-- Trục -->
+<g id="radarAxes"></g>
+<!-- Vùng dữ liệu -->
+<polygon id="radarPolygon" fill="rgba(0,109,51,0.2)" stroke="#006d33" stroke-width="2" stroke-linejoin="round"/>
+<!-- Điểm nút -->
+<g id="radarNodes"></g>
+</svg>
+</div>
+</div>
+<button id="runSimulationBtn" class="w-full bg-secondary hover:bg-on-secondary-container text-white py-6 rounded-xl font-headline font-bold text-xl flex items-center justify-center gap-3 shadow-xl transition-all active:scale-[0.98]">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">play_arrow</span>
+                    Chạy mô phỏng
+                </button>
+<div class="bg-surface-container-highest/30 p-4 rounded-xl border border-outline-variant/10">
+<p class="text-xs text-on-surface-variant leading-relaxed">
+<span class="font-bold uppercase tracking-tighter mr-1">Note:</span> 
+                        Dựa trên kho dữ liệu của Toshiba, trình giả lập này cho phép bạn xây dựng và thử nghiệm các mô hình kiến trúc tương lai dựa trên tính toán xác suất thực tế.
+                    </p>
+</div>
+<!-- THÊM MỚI: Strategic Insights (từ bản phụ 3) -->
+<div class="bg-primary/5 rounded-xl p-5 border border-primary/20">
+<div class="flex items-center gap-2 mb-3">
+<span class="material-symbols-outlined text-primary">insights</span>
+<h3 class="font-headline font-bold text-sm uppercase tracking-wider text-primary">Strategic Insights</h3>
+</div>
+<div class="space-y-3 text-xs">
+<p class="flex items-start gap-2"><span class="material-symbols-outlined text-secondary text-sm">check_small</span><span id="insight1">Cân bằng INC/RAD tốt, tiềm năng tăng trưởng ổn định.</span></p>
+<p class="flex items-start gap-2"><span class="material-symbols-outlined text-secondary text-sm">check_small</span><span id="insight2">Năng lực Sensing mạnh giúp giảm rủi ro dài hạn.</span></p>
+<p class="flex items-start gap-2"><span class="material-symbols-outlined text-secondary text-sm">check_small</span><span id="insight3">Hợp tác (COP) thấp có thể gây cô lập hệ sinh thái.</span></p>
+</div>
+</div>
+</section>
+</div>
+</main>
+<!-- SideNav (Mobile Only) giữ nguyên -->
+<aside class="md:hidden fixed bottom-0 left-0 w-full bg-white/70 backdrop-blur-xl border-t border-outline-variant/15 flex justify-around py-4 z-50">
+<button class="flex flex-col items-center gap-1 text-primary">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">dashboard</span>
+<span class="text-[10px] font-bold uppercase tracking-tighter">Overview</span>
+</button>
+<button class="flex flex-col items-center gap-1 text-on-surface-variant">
+<span class="material-symbols-outlined">timeline</span>
+<span class="text-[10px] font-bold uppercase tracking-tighter">Timeline</span>
+</button>
+<button class="flex flex-col items-center gap-1 text-on-surface-variant">
+<span class="material-symbols-outlined">inventory_2</span>
+<span class="text-[10px] font-bold uppercase tracking-tighter">Resources</span>
+</button>
+<button class="flex flex-col items-center gap-1 text-on-surface-variant">
+<span class="material-symbols-outlined">settings</span>
+<span class="text-[10px] font-bold uppercase tracking-tighter">Settings</span>
+</button>
+</aside>
+
+<script src="js/simulator.js"></script>
+<script src="js/navigation.js"></script>
+</body></html>

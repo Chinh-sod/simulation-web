@@ -1,0 +1,18 @@
+{
+  "templates": {
+    "amb_opt": "Thành công nhờ sự cân bằng lý tưởng. Với INC {{INC}}% và RAD {{RAD}}%, Toshiba tối ưu hóa được dòng tiền hiện tại để nuôi dưỡng các mảng Hydrogen và QKD. Năng lực Transforming ({{tra}}) cao giúp tổ chức thích ứng nhanh, đạt tăng trưởng {{growth_avg}}% mà không bị quá tải.",
+    "amb_fail": "Cảnh báo: Rủi ro đầu tư quá mức (Penalty). Tổng mức đầu tư vượt ngưỡng chịu tải trong khi năng lực quản trị (Transforming {{tra}}) thấp. Việc dàn trải nguồn lực khiến tăng trưởng {{growth_avg}}% không bù đắp được chi phí vận hành, dễ dẫn đến khủng hoảng tài chính ngắn hạn.",
+    
+    "seq_succ": "Chiến lược 'Chậm mà chắc' thành công. Tập trung vào INC ({{INC}}%) giúp Toshiba thống trị mảng HDD và chip công suất. Dù tăng trưởng đột phá thấp, rủi ro {{risk}}/100 là cực an toàn. Đây là bước đệm tài chính hoàn hảo trước khi bứt phá vào năm 2030.",
+    "seq_fail": "Nguy cơ rơi vào bẫy trì trệ. Đầu tư quá thấp vào cả cải tiến lẫn đột phá khiến năng lực cạnh tranh suy giảm. Tăng trưởng {{growth_avg}}% thấp hơn mức trung bình ngành, khiến Toshiba dần mất thị phần vào tay các đối thủ năng động hơn.",
+
+    "pio_succ": "Đột phá ngoạn mục! Bằng cách dồn toàn lực vào RAD ({{RAD}}%) và dẫn đầu thị trường (FIR {{FIR}}), Toshiba tái định vị thành gã khổng lồ công nghệ xanh. Năng lực học hỏi LEA ({{lea}}) cao giúp hấp thụ nhanh công nghệ mới, mang lại doanh thu đột biến {{revenue_max}} tỷ USD.",
+    "pio_fail": "Canh bạc thất bại. Dù RAD ({{RAD}}%) rất cao nhưng năng lực Sensing ({{sen}}) và Seizing ({{sei}}) quá yếu, dẫn đến việc đầu tư sai hướng hoặc không thể thương mại hóa sản phẩm. Rủi ro {{risk}}/100 chạm ngưỡng báo động, đe dọa sự sinh tồn của tập đoàn.",
+
+    "fol_succ": "Thành công nhờ chiến thuật 'Fast Follower'. Tận dụng tốc độ SPD ({{SPD}}%) và khả năng nắm bắt cơ hội SEI ({{SEI}}%) cực tốt để chiếm lĩnh thị trường ngay khi đối thủ vừa khai phá. Doanh thu tăng trưởng ổn định {{growth_avg}}% với mức chi phí R&D thấp hơn nhóm dẫn đầu.",
+    "fol_fail": "Thất bại do phản ứng chậm. Dù chọn chiến lược theo sau nhưng chỉ số SPD ({{SPD}}%) và LEA ({{lea}}) thấp khiến Toshiba luôn đi sau thị trường quá xa. Khi bắt đầu tham gia, lợi nhuận biên đã bị vắt kiệt bởi những người đến trước.",
+
+    "imi_succ": "Tối ưu hóa lợi nhuận từ những gì đã có. Tập trung tuyệt đối vào INC ({{INC}}%) và liên minh COP ({{COP}}%) giúp giảm thiểu chi phí. Toshiba đóng vai trò nhà cung cấp linh kiện tin cậy, duy trì dòng tiền ổn định với rủi ro thấp nhất hệ thống ({{risk}}/100).",
+    "imi_fail": "Nguy cơ lỗi thời hiện hữu. Việc từ bỏ đổi mới (RAD chỉ {{RAD}}%) trong khi khả năng cải tiến INC ({{INC}}%) cũng không đủ mạnh khiến sản phẩm mất dần sức hút. Nếu không tái cấu trúc nhanh, doanh nghiệp sẽ bị đào thải khỏi chuỗi giá trị toàn cầu."
+  }
+}

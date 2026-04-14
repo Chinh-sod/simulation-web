@@ -1,0 +1,42 @@
+{
+  "Song hành _Optimal": {
+    "name": "Song hành - Cân bằng tối ưu", "text_id": "amb_opt",
+    "INC": 65, "RAD": 45, "SPD": 75, "SEN": 80, "SEI": 75, "TRA": 72, "LEA": 70, "FIR": 65, "COP": 75
+  },
+  "Song hành _Overload": {
+    "name": "Song hành - Rủi ro quá tải", "text_id": "amb_fail",
+    "INC": 85, "RAD": 65, "SPD": 60, "SEN": 50, "SEI": 55, "TRA": 40, "LEA": 50, "FIR": 45, "COP": 50
+  },
+  "Tuần tự _Solid": {
+    "name": "Tuần tự - Nền tảng vững chắc", "text_id": "seq_succ",
+    "INC": 85, "RAD": 15, "SPD": 65, "SEN": 70, "SEI": 65, "TRA": 60, "LEA": 75, "FIR": 30, "COP": 70
+  },
+  "Tuần tự _Stagnant": {
+    "name": "Tuần tự - Trì trệ công nghệ", "text_id": "seq_fail",
+    "INC": 50, "RAD": 10, "SPD": 40, "SEN": 45, "SEI": 40, "TRA": 35, "LEA": 40, "FIR": 20, "COP": 45
+  },
+  "Pioneer_Visionary": {
+    "name": "Dẫn đầu - Tầm nhìn đột phá", "text_id": "pio_succ",
+    "INC": 30, "RAD": 80, "SPD": 90, "SEN": 95, "SEI": 90, "TRA": 92, "LEA": 85, "FIR": 95, "COP": 80
+  },
+  "Pioneer_Gambler": {
+    "name": "Dẫn đầu - Canh bạc rủi ro", "text_id": "pio_fail",
+    "INC": 10, "RAD": 95, "SPD": 80, "SEN": 60, "SEI": 50, "TRA": 45, "LEA": 50, "FIR": 90, "COP": 40
+  },
+  "Follower_Fast": {
+    "name": "Theo sau - Thần tốc chiếm lĩnh", "text_id": "fol_succ",
+    "INC": 60, "RAD": 40, "SPD": 95, "SEN": 85, "SEI": 95, "TRA": 80, "LEA": 90, "FIR": 30, "COP": 85
+  },
+  "Follower_Slow": {
+    "name": "Theo sau - Chậm chân mất đà", "text_id": "fol_fail",
+    "INC": 70, "RAD": 20, "SPD": 50, "SEN": 55, "SEI": 50, "TRA": 45, "LEA": 55, "FIR": 25, "COP": 50
+  },
+  "Bắt chước_Efficient": {
+    "name": "Bắt chước - Tối ưu vận hành", "text_id": "imi_succ",
+    "INC": 95, "RAD": 5, "SPD": 70, "SEN": 60, "SEI": 75, "TRA": 55, "LEA": 70, "FIR": 10, "COP": 90
+  },
+  "Bắt chước_Obsolescent": {
+    "name": "Bắt chước - Nguy cơ lỗi thời", "text_id": "imi_fail",
+    "INC": 60, "RAD": 5, "SPD": 40, "SEN": 30, "SEI": 35, "TRA": 25, "LEA": 30, "FIR": 10, "COP": 40
+  }
+}
