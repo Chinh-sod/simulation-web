@@ -1,1 +1,426 @@
-<!DOCTYPE html> <html class="light" lang="vi"> <head> <meta charset="utf-8"/> <meta content="width=device-width, initial-scale=1.0" name="viewport"/> <link href="https://fonts.googleapis.com" rel="preconnect"/> <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/> <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Space+Grotesk:wght@700&amp;display=swap" rel="stylesheet"/> <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/> <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script> <script>(function(){var _0x3f2a=["dGFpbHdpbmQuY29uZmlnID0gewogICAgICAgICAg","ICBkYXJrTW9kZTogImNsYXNzIiwKICAgICAgICAg","ICAgdGhlbWU6IHsKICAgICAgICAgICAgICAgIGV4","dGVuZDogewogICAgICAgICAgICAgICAgICAgIGNv","bG9yczogewogICAgICAgICAgICAgICAgICAgICAg","ICAib24tdGVydGlhcnktY29udGFpbmVyIjogIiNm","ZjYxNGQiLAogICAgICAgICAgICAgICAgICAgICAg","ICAic3VyZmFjZS1jb250YWluZXItaGlnaGVzdCI6","ICIjZTRlMmUxIiwKICAgICAgICAgICAgICAgICAg","ICAgICAgIm9uLXNlY29uZGFyeS1maXhlZC12YXJp","YW50IjogIiMwMDUyMjUiLAogICAgICAgICAgICAg","ICAgICAgICAgICAib24tdGVydGlhcnktZml4ZWQt","dmFyaWFudCI6ICIjOTMwMDAwIiwKICAgICAgICAg","ICAgICAgICAgICAgICAgInRlcnRpYXJ5LWNvbnRh","aW5lciI6ICIjNjUwMDAwIiwKICAgICAgICAgICAg","ICAgICAgICAgICAgInN1cmZhY2UtY29udGFpbmVy","IjogIiNmMGVkZWQiLAogICAgICAgICAgICAgICAg","ICAgICAgICAiZXJyb3IiOiAiI2JhMWExYSIsCiAg","ICAgICAgICAgICAgICAgICAgICAgICJpbnZlcnNl","LXByaW1hcnkiOiAiI2FiYzdmZiIsCiAgICAgICAg","ICAgICAgICAgICAgICAgICJvbi1zZWNvbmRhcnkt","Y29udGFpbmVyIjogIiMwMDcyMzYiLAogICAgICAg","ICAgICAgICAgICAgICAgICAidGVydGlhcnkiOiAi","IzNkMDAwMCIsCiAgICAgICAgICAgICAgICAgICAg","ICAgICJvbi1wcmltYXJ5IjogIiNmZmZmZmYiLAog","ICAgICAgICAgICAgICAgICAgICAgICAicHJpbWFy","eSI6ICIjMDAxOTNjIiwKICAgICAgICAgICAgICAg","ICAgICAgICAgInByaW1hcnktY29udGFpbmVyIjog","IiMwMDJkNjIiLAogICAgICAgICAgICAgICAgICAg","ICAgICAic3VyZmFjZS1jb250YWluZXItbG93ZXN0","IjogIiNmZmZmZmYiLAogICAgICAgICAgICAgICAg","ICAgICAgICAic3VyZmFjZS1jb250YWluZXItbG93","IjogIiNmNmYzZjIiLAogICAgICAgICAgICAgICAg","ICAgICAgICAic2Vjb25kYXJ5LWZpeGVkIjogIiM3","OGZjOWMiLAogICAgICAgICAgICAgICAgICAgICAg","ICAib24tZXJyb3IiOiAiI2ZmZmZmZiIsCiAgICAg","ICAgICAgICAgICAgICAgICAgICJpbnZlcnNlLXN1","cmZhY2UiOiAiIzMwMzAzMCIsCiAgICAgICAgICAg","ICAgICAgICAgICAgICJzdXJmYWNlLWJyaWdodCI6","ICIjZmJmOWY4IiwKICAgICAgICAgICAgICAgICAg","ICAgICAgInByaW1hcnktZml4ZWQtZGltIjogIiNh","YmM3ZmYiLAogICAgICAgICAgICAgICAgICAgICAg","ICAib3V0bGluZS12YXJpYW50IjogIiNjNGM2ZDEi","LAogICAgICAgICAgICAgICAgICAgICAgICAib24t","cHJpbWFyeS1maXhlZCI6ICIjMDAxYjNmIiwKICAg","ICAgICAgICAgICAgICAgICAgICAgIm9uLWJhY2tn","cm91bmQiOiAiIzFiMWMxYyIsCiAgICAgICAgICAg","ICAgICAgICAgICAgICJzdXJmYWNlLWRpbSI6ICIj","ZGNkOWQ5IiwKICAgICAgICAgICAgICAgICAgICAg","ICAgInRlcnRpYXJ5LWZpeGVkIjogIiNmZmRhZDQi","LAogICAgICAgICAgICAgICAgICAgICAgICAib3V0","bGluZSI6ICIjNzQ3NzgxIiwKICAgICAgICAgICAg","ICAgICAgICAgICAgInN1cmZhY2UtY29udGFpbmVy","LWhpZ2giOiAiI2VhZThlNyIsCiAgICAgICAgICAg","ICAgICAgICAgICAgICJvbi1zZWNvbmRhcnkiOiAi","I2ZmZmZmZiIsCiAgICAgICAgICAgICAgICAgICAg","ICAgICJzdXJmYWNlLXZhcmlhbnQiOiAiI2U0ZTJl","MSIsCiAgICAgICAgICAgICAgICAgICAgICAgICJz","dXJmYWNlLXRpbnQiOiAiIzNlNWU5NSIsCiAgICAg","ICAgICAgICAgICAgICAgICAgICJvbi1zdXJmYWNl","LXZhcmlhbnQiOiAiIzQzNDc0ZiIsCiAgICAgICAg","ICAgICAgICAgICAgICAgICJvbi1wcmltYXJ5LWZp","eGVkLXZhcmlhbnQiOiAiIzI0NDY3YyIsCiAgICAg","ICAgICAgICAgICAgICAgICAgICJvbi1lcnJvci1j","b250YWluZXIiOiAiIzkzMDAwYSIsCiAgICAgICAg","ICAgICAgICAgICAgICAgICJvbi10ZXJ0aWFyeS1m","aXhlZCI6ICIjNDEwMDAwIiwKICAgICAgICAgICAg","ICAgICAgICAgICAgIm9uLXRlcnRpYXJ5IjogIiNm","ZmZmZmYiLAogICAgICAgICAgICAgICAgICAgICAg","ICAic2Vjb25kYXJ5LWZpeGVkLWRpbSI6ICIjNWFk","ZjgyIiwKICAgICAgICAgICAgICAgICAgICAgICAg","InByaW1hcnktZml4ZWQiOiAiI2Q3ZTJmZiIsCiAg","ICAgICAgICAgICAgICAgICAgICAgICJiYWNrZ3Jv","dW5kIjogIiNmYmY5ZjgiLAogICAgICAgICAgICAg","ICAgICAgICAgICAib24tc3VyZmFjZSI6ICIjMWIx","YzFjIiwKICAgICAgICAgICAgICAgICAgICAgICAg","InNlY29uZGFyeS1jb250YWluZXIiOiAiIzc1Zjk5","OSIsCiAgICAgICAgICAgICAgICAgICAgICAgICJz","dXJmYWNlIjogIiNmYmY5ZjgiLAogICAgICAgICAg","ICAgICAgICAgICAgICAiaW52ZXJzZS1vbi1zdXJm","YWNlIjogIiNmM2YwZjAiLAogICAgICAgICAgICAg","ICAgICAgICAgICAib24tcHJpbWFyeS1jb250YWlu","ZXIiOiAiIzc3OTZkMSIsCiAgICAgICAgICAgICAg","ICAgICAgICAgICJzZWNvbmRhcnkiOiAiIzAwNmQz","MyIsCiAgICAgICAgICAgICAgICAgICAgICAgICJv","bi1zZWNvbmRhcnktZml4ZWQiOiAiIzAwMjEwYiIs","CiAgICAgICAgICAgICAgICAgICAgICAgICJ0ZXJ0","aWFyeS1maXhlZC1kaW0iOiAiI2ZmYjRhOCIsCiAg","ICAgICAgICAgICAgICAgICAgICAgICJlcnJvci1j","b250YWluZXIiOiAiI2ZmZGFkNiIKICAgICAgICAg","ICAgICAgICAgICB9LAogICAgICAgICAgICAgICAg","ICAgIGJvcmRlclJhZGl1czogewogICAgICAgICAg","ICAgICAgICAgICAgICBERUZBVUxUOiAiMC4xMjVy","ZW0iLAogICAgICAgICAgICAgICAgICAgICAgICBs","ZzogIjAuMjVyZW0iLAogICAgICAgICAgICAgICAg","ICAgICAgICB4bDogIjAuNXJlbSIsCiAgICAgICAg","ICAgICAgICAgICAgICAgIGZ1bGw6ICIwLjc1cmVt","IgogICAgICAgICAgICAgICAgICAgIH0sCiAgICAg","ICAgICAgICAgICAgICAgZm9udEZhbWlseTogewog","ICAgICAgICAgICAgICAgICAgICAgICBoZWFkbGlu","ZTogWyJTcGFjZSBHcm90ZXNrIl0sCiAgICAgICAg","ICAgICAgICAgICAgICAgIGJvZHk6IFsiSW50ZXIi","XSwKICAgICAgICAgICAgICAgICAgICAgICAgbGFi","ZWw6IFsiSW50ZXIiXQogICAgICAgICAgICAgICAg","ICAgIH0KICAgICAgICAgICAgICAgIH0sCiAgICAg","ICAgICAgIH0sCiAgICAgICAgfQ=="];var _0x1b9e=_0x3f2a.join('');var _0xc4d1=atob(_0x1b9e);eval(new Function(_0xc4d1)());})();</script> <style>.material-symbols-outlined{font-variation-settings:'FILL' 0,'wght' 400,'GRAD' 0,'opsz' 24}.glass-panel{background:rgba(255,255,255,0.7);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px)}.modal-backdrop{transition:opacity 0.3s ease}.modal-content{transition:transform 0.3s ease,opacity 0.3s ease}body.modal-open{overflow:hidden}</style> </head> <body class="bg-background text-on-surface font-body selection:bg-secondary-container selection:text-on-secondary-container"> <nav class="fixed top-0 w-full z-50 bg-[#fbf9f8] dark:bg-[#1b1c1c]"> <div class="flex justify-between items-center px-12 py-6 w-full max-w-screen-2xl mx-auto"> <div class="text-2xl font-bold tracking-tighter text-[#00193c] dark:text-white font-headline">Toshiba Innovation</div> <div class="hidden md:flex gap-8 items-center"> <a class="font-headline tracking-tight font-bold text-[#00193c] dark:text-[#78fc9c] border-b-2 border-[#006d33] pb-1 transition-colors duration-300" href="index.html">Home</a> <a class="font-headline tracking-tight font-bold text-[#43474f] dark:text-[#e4e2e1] pb-1 hover:text-[#002d62] dark:hover:text-[#78fc9c] transition-colors duration-300" href="simulator.html">Simulator</a> <a class="font-headline tracking-tight font-bold text-[#43474f] dark:text-[#e4e2e1] pb-1 hover:text-[#002d62] dark:hover:text-[#78fc9c] transition-colors duration-300" href="theory.html">Theory</a> <a class="font-headline tracking-tight font-bold text-[#43474f] dark:text-[#e4e2e1] pb-1 hover:text-[#002d62] dark:hover:text-[#78fc9c] transition-colors duration-300" href="canvas.html">Canvas</a> <a class="font-headline tracking-tight font-bold text-[#43474f] dark:text-[#e4e2e1] pb-1 hover:text-[#002d62] dark:hover:text-[#78fc9c] transition-colors duration-300" href="about.html">About</a> <a class="font-headline tracking-tight font-bold text-[#43474f] dark:text-[#e4e2e1] pb-1 hover:text-[#002d62] dark:hover:text-[#78fc9c] transition-colors duration-300" href="contact.html">Contact</a> </div> <a href="simulator.html"> <button class="bg-primary-container text-on-primary px-6 py-2 rounded-lg font-headline font-bold hover:bg-primary transition-all duration-200 active:scale-95"> Bắt đầu </button> </a> </div> </nav> <main class="pt-24"> <section class="relative h-[716px] w-full overflow-hidden bg-gradient-to-br from-primary via-primary-container to-secondary flex items-center px-12 md:px-24"> <div class="absolute inset-0 opacity-20 pointer-events-none" style="background-image: radial-gradient(circle at 2px 2px, #78fc9c 1px, transparent 0); background-size: 40px 40px;"></div> <div class="relative z-10 max-w-4xl grid grid-cols-1 md:grid-cols-2 gap-12 items-center"> <div class="space-y-8"> <h1 class="text-white font-headline text-5xl md:text-7xl font-bold tracking-tight leading-[1.1]"> Mô Phỏng lộ trình Đổi mới 5 năm của Toshiba </h1> <div class="flex flex-col gap-4 w-fit"> <a href="simulator.html"> <button class="bg-secondary text-white px-8 py-4 rounded-md font-bold text-lg hover:bg-on-secondary-container transition-all duration-300 shadow-lg shadow-secondary/20 flex items-center gap-3"> Bắt đầu Mô phỏng <span class="material-symbols-outlined">rocket_launch</span> </button> </a> <a href="theory.html"> <button class="bg-white/10 backdrop-blur-md border border-white/20 text-white px-8 py-4 rounded-md font-bold text-lg hover:bg-white/20 transition-all duration-300 flex items-center gap-3"> Tìm hiểu Lý thuyết <span class="material-symbols-outlined">menu_book</span> </button> </a> </div> </div> <div class="hidden md:block relative h-full"> <div class="flex flex-col gap-6 transform skew-y-12 translate-x-12 opacity-90"> <div class="glass-panel p-6 rounded-xl border border-white/30 self-end w-64 shadow-2xl"> <div class="text-secondary font-headline font-bold text-2xl">2030</div> <div class="text-primary text-sm font-medium">Net-Zero Energy Systems Integrated</div> </div> <div class="glass-panel p-6 rounded-xl border border-white/30 self-center w-64 shadow-2xl"> <div class="text-secondary font-headline font-bold text-2xl">2028</div> <div class="text-primary text-sm font-medium">Commercial QKD Networks Global</div> </div> <div class="glass-panel p-6 rounded-xl border border-white/30 self-start w-64 shadow-2xl"> <div class="text-secondary font-headline font-bold text-2xl">2026</div> <div class="text-primary text-sm font-medium">Next-Gen HDD Mass Production</div> </div> </div> </div> </div> </section> <section class="py-24 px-12 max-w-screen-2xl mx-auto"> <div class="grid grid-cols-1 md:grid-cols-3 gap-8"> <div class="group bg-surface-container-low p-10 rounded-none relative overflow-hidden transition-all duration-500 hover:bg-surface-container"> <div class="relative z-10"> <span class="material-symbols-outlined text-4xl text-primary mb-6" data-weight="fill">storage</span> <h3 class="font-headline text-2xl font-bold text-primary mb-4 leading-tight">Thị phần ổ cứng HDD</h3> <p class="text-on-surface-variant leading-relaxed">Dẫn đầu thị trường lưu trữ dữ liệu với công nghệ ghi từ tính thế hệ mới, tối ưu hóa cho các trung tâm dữ liệu quy mô lớn.</p> <button class="mt-8 flex items-center gap-2 text-secondary font-bold group-hover:gap-4 transition-all w-fit cursor-pointer" onclick="openModal('hdd')"> Xem chi tiết <span class="material-symbols-outlined">arrow_forward</span> </button> </div> <div class="absolute -bottom-6 -right-6 w-32 h-32 bg-secondary/10 rounded-full blur-2xl group-hover:bg-secondary/20 transition-all"></div> </div> <div class="group bg-surface-container-low p-10 rounded-none relative overflow-hidden transition-all duration-500 hover:bg-surface-container"> <div class="relative z-10"> <span class="material-symbols-outlined text-4xl text-primary mb-6" data-weight="fill">enhanced_encryption</span> <h3 class="font-headline text-2xl font-bold text-primary mb-4 leading-tight">Công nghệ QKD</h3> <p class="text-on-surface-variant leading-relaxed">Phân phối khóa lượng tử (Quantum Key Distribution) bảo mật tuyệt đối, nền tảng cho an ninh mạng tương lai.</p> <button class="mt-8 flex items-center gap-2 text-secondary font-bold group-hover:gap-4 transition-all w-fit cursor-pointer" onclick="openModal('qkd')"> Khám phá <span class="material-symbols-outlined">arrow_forward</span> </button> </div> <div class="absolute -top-6 -left-6 w-24 h-24 bg-primary/5 rounded-full blur-xl group-hover:bg-primary/10 transition-all"></div> <div class="absolute top-4 right-4 text-[10px] font-headline font-bold text-tertiary-container bg-tertiary-fixed-dim px-2 py-1 rounded-full uppercase tracking-widest">Priority Alpha</div> </div> <div class="group bg-surface-container-low p-10 rounded-none relative overflow-hidden transition-all duration-500 hover:bg-surface-container"> <div class="relative z-10"> <span class="material-symbols-outlined text-4xl text-primary mb-6" data-weight="fill">eco</span> <h3 class="font-headline text-2xl font-bold text-primary mb-4 leading-tight">Dự án Hydro FH2R</h3> <p class="text-on-surface-variant leading-relaxed">Hệ thống sản xuất Hydro quy mô lớn nhất thế giới, định hình tương lai năng lượng sạch và bền vững.</p> <button class="mt-8 flex items-center gap-2 text-secondary font-bold group-hover:gap-4 transition-all w-fit cursor-pointer" onclick="openModal('fh2r')"> Tìm hiểu FH2R <span class="material-symbols-outlined">arrow_forward</span> </button> </div> <div class="absolute bottom-0 right-0 w-48 h-48 bg-gradient-to-tl from-secondary/10 to-transparent group-hover:from-secondary/20 transition-all"></div> </div> </div> </section> <section class="py-24 bg-surface-container-low"> <div class="max-w-screen-2xl mx-auto px-12 grid grid-cols-1 md:grid-cols-12 gap-16 items-center"> <div class="md:col-span-7 relative"> <div class="aspect-video bg-surface-container-highest rounded-xl overflow-hidden relative shadow-2xl"> <img alt="Toshiba industrial innovation lab" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBtznfgBKWzufUonh2A7Zv-KIpmtoU3AnVYvGebscWgWxKWLaqmZRwwYrcKPLhxUW9U_nkKiO8t7FlnI_sgzx5yQsoWe8sUDr-1zvQJ-65VIltIoEGy7Y9ha7PqYfRM3MoUV1WpyVqKOPCcrc1dX3l6U8ZFXfYta9tgcGZTDGefZG0-bF0qHrXvXtIUwvQoqXALVgM0xZi4TO8I2lnnM1nlPpGxBQBMWM_3vk_pSno9ZsHU3mhJwkyvcW80SdSKSNrfDGxwvC8qm9vz"/> <div class="absolute inset-0 bg-primary/20 backdrop-overlay"></div> </div> <div class="absolute -bottom-10 -left-10 glass-panel p-8 rounded-lg shadow-[40px_0_40px_rgba(62,94,149,0.06)] border border-white/50 max-w-xs"> <div class="flex items-center gap-4 mb-4"> <span class="w-3 h-3 rounded-full bg-secondary shadow-[0_0_12px_rgba(117,249,153,0.8)]"></span> <span class="font-headline font-bold text-primary">Simulation Active</span> </div> <div class="h-1 w-full bg-outline-variant/20 rounded-full mb-4"> <div class="h-1 bg-primary w-2/3"></div> </div> <p class="text-xs text-on-surface-variant font-medium">Processing real-time infrastructure data from Fukushima Hydrogen Research Field.</p> </div> </div> <div class="md:col-span-5 space-y-6"> <h2 class="font-headline text-4xl font-bold text-primary tracking-tight">Kiến tạo tương lai thông qua <span class="text-secondary">Đổi mới Chính xác</span></h2> <p class="text-lg text-on-surface-variant leading-relaxed"> Toshiba cam kết mang lại sự bền vững và an ninh thông qua các giải pháp kỹ thuật tinh vi. Simulator này cho phép bạn tương tác trực tiếp với các biến số chiến lược của chúng tôi từ 2026 đến 2030. </p> <div class="space-y-4 pt-4"> <div class="flex gap-4 items-start"> <span class="material-symbols-outlined text-secondary">verified</span> <div> <h4 class="font-bold text-primary">Độ chính xác cấp công nghiệp</h4> <p class="text-sm text-on-surface-variant">Mô hình toán học dựa trên dữ liệu thực tế từ các nhà máy của Toshiba.</p> </div> </div> <div class="flex gap-4 items-start"> <span class="material-symbols-outlined text-secondary">analytics</span> <div> <h4 class="font-bold text-primary">Phân tích đa chiều</h4> <p class="text-sm text-on-surface-variant">Đánh giá tác động của công nghệ QKD và Năng lượng Hydro.</p> </div> </div> </div> </div> </div> </section> </main> <footer class="bg-surface py-16 px-12 border-t border-outline-variant/10"> <div class="max-w-screen-2xl mx-auto flex flex-col md:flex-row justify-between gap-12"> <div class="space-y-6 max-w-sm"> <div class="text-2xl font-bold tracking-tighter text-primary font-headline">Toshiba Innovation</div> <p class="text-sm text-on-surface-variant leading-relaxed"> Hệ thống mô phỏng lộ trình chiến lược được thiết kế cho các đối tác và nhà đầu tư toàn cầu của Toshiba Corporation. </p> </div> <div class="grid grid-cols-2 md:grid-cols-3 gap-12"> <div class="space-y-4"> <h4 class="font-headline font-bold text-primary">Platform</h4> <ul class="space-y-2 text-sm text-on-surface-variant"> <li><a class="hover:text-secondary transition-colors" href="simulator.html">Simulator</a></li> <li><a class="hover:text-secondary transition-colors" href="#">Data Analysis</a></li> <li><a class="hover:text-secondary transition-colors" href="#">API Access</a></li> </ul> </div> <div class="space-y-4"> <h4 class="font-headline font-bold text-primary">Resources</h4> <ul class="space-y-2 text-sm text-on-surface-variant"> <li><a class="hover:text-secondary transition-colors" href="theory.html">Theory</a></li> <li><a class="hover:text-secondary transition-colors" href="#">Documentation</a></li> <li><a class="hover:text-secondary transition-colors" href="#">White Papers</a></li> </ul> </div> <div class="space-y-4"> <h4 class="font-headline font-bold text-primary">Legal</h4> <ul class="space-y-2 text-sm text-on-surface-variant"> <li><a class="hover:text-secondary transition-colors" href="#">Privacy Policy</a></li> <li><a class="hover:text-secondary transition-colors" href="#">Terms of Service</a></li> </ul> </div> </div> </div> <div class="max-w-screen-2xl mx-auto mt-16 pt-8 border-t border-outline-variant/10 text-xs text-on-surface-variant flex justify-between items-center"> <p>© 2026 Toshiba Innovation Roadmap Simulator | Bảo lưu mọi quyền.</p> <div class="flex gap-6"> <a class="hover:text-primary" href="contact.html">LinkedIn</a> <a class="hover:text-primary" href="contact.html">Twitter</a> <a class="hover:text-primary" href="index.html">Global Site</a> </div> </div> </footer> <div class="fixed inset-0 bg-black/70 backdrop-blur-sm z-[100] flex items-center justify-center opacity-0 invisible transition-all duration-300 modal-backdrop" id="modalOverlay" onclick="closeModal()"> <div class="modal-content bg-surface-container-lowest rounded-2xl max-w-3xl w-full mx-6 max-h-[85vh] overflow-y-auto shadow-2xl transform scale-95 opacity-0 transition-all duration-300" onclick="event.stopPropagation()"> <div class="sticky top-0 bg-surface-container-lowest z-10 flex justify-between items-center p-6 border-b border-outline-variant/20"> <h2 class="font-headline text-2xl font-bold text-primary" id="modalTitle">Title</h2> <button class="text-on-surface-variant hover:text-primary transition-colors" onclick="closeModal()"> <span class="material-symbols-outlined text-3xl">close</span> </button> </div> <div class="p-6 md:p-8 space-y-6 text-on-surface" id="modalContent"> </div> </div> </div> <script>(function(){var _0x3f2a=["Ly8gRGV0YWlsZWQgY29udGVudCBmb3IgZWFjaCB0","ZWNobm9sb2d5CiAgICBjb25zdCBtb2RhbERldGFp","bHMgPSB7CiAgICAgICAgaGRkOiB7CiAgICAgICAg","ICAgIHRpdGxlOiAiQ8O0bmcgbmdo4buHIEdoaSB0","4burIHTDrW5oIFRo4bq/IGjhu4cgbeG7m2kiLAog","ICAgICAgICAgICBjb250ZW50OiBgCiAgICAgICAg","ICAgICAgICA8ZGl2IGNsYXNzPSJzcGFjZS15LTYi","PgogICAgICAgICAgICAgICAgICAgIDxkaXYgY2xh","c3M9ImJnLXByaW1hcnkvNSBwLTUgcm91bmRlZC14","bCI+CiAgICAgICAgICAgICAgICAgICAgICAgIDxo","MyBjbGFzcz0iZm9udC1oZWFkbGluZSB0ZXh0LXhs","IGZvbnQtYm9sZCB0ZXh0LXByaW1hcnkgbWItMiI+","8J+TiiBU4buVbmcgcXVhbjwvaDM+CiAgICAgICAg","ICAgICAgICAgICAgICAgIDxwIGNsYXNzPSJ0ZXh0","LW9uLXN1cmZhY2UtdmFyaWFudCBsZWFkaW5nLXJl","bGF4ZWQiPlRyb25nIGvhu7cgbmd1ecOqbiBiw7lu","ZyBu4buVIGThu68gbGnhu4d1LCDhu5UgY+G7qW5n","IEhERCB24bqrbiDEkcOzbmcgdmFpIHRyw7IgeMaw","xqFuZyBz4buRbmcgY2hvIGPDoWMgaOG7hyB0aOG7","kW5nIGzGsHUgdHLhu68gxJHDoW0gbcOieSBuaOG7","nSBjaGkgcGjDrSB04buRaSDGsHUgdHLDqm4gbeG7","l2kgVEIuIENow7puZyB0w7RpIHThuq1wIHRydW5n","IHbDoG8gdmnhu4djIMSR4bqpeSBnaeG7m2kgaOG6","oW4gduG6rXQgbMO9IGPhu6dhIGzGsHUgdHLhu68g","dOG7qyB0w61uaCBsw6puIG3hu5l0IHThuqdtIGNh","byBt4bubaS48L3A+CiAgICAgICAgICAgICAgICAg","ICAgPC9kaXY+CiAgICAgICAgICAgICAgICAgICAg","PGRpdj4KICAgICAgICAgICAgICAgICAgICAgICAg","PGgzIGNsYXNzPSJmb250LWhlYWRsaW5lIHRleHQt","eGwgZm9udC1ib2xkIHRleHQtcHJpbWFyeSBtYi0z","Ij4g4pyoIEPDoWMgxJFp4buDbSBu4buVaSBi4bqt","dDwvaDM+CiAgICAgICAgICAgICAgICAgICAgICAg","IDx1bCBjbGFzcz0ic3BhY2UteS0zIj4KICAgICAg","ICAgICAgICAgICAgICAgICAgICAgIDxsaSBjbGFz","cz0iZmxleCBnYXAtMyI+PHNwYW4gY2xhc3M9Im1h","dGVyaWFsLXN5bWJvbHMtb3V0bGluZWQgdGV4dC1z","ZWNvbmRhcnkiPmNoZWNrX2NpcmNsZTwvc3Bhbj48","c3Bhbj48c3Ryb25nIGNsYXNzPSJmb250LWJvbGQi","PkPDtG5nIG5naOG7hyBHaGkgbmhp4buHdCAoSEFN","UikgJiBHaGkgdmkgc8OzbmcgKE1BTVIpOjwvc3Ry","b25nPiBUxINuZyBt4bqtdCDEkeG7mSBsxrB1IHRy","4buvIGzDqm4gZ+G6pXAgxJHDtGkgc28gduG7m2kg","Y8OhYyBkw7JuZyBIREQgdHJ1eeG7gW4gdGjhu5Fu","ZywgY2hvIHBow6lwIGR1bmcgbMaw4bujbmcgbeG7","l2kg4buVIHbGsOG7o3QgbmfGsOG7oW5nIDMwVEIg","LSA1MFRCLjwvc3Bhbj48L2xpPgogICAgICAgICAg","ICAgICAgICAgICAgICAgICAgPGxpIGNsYXNzPSJm","bGV4IGdhcC0zIj48c3BhbiBjbGFzcz0ibWF0ZXJp","YWwtc3ltYm9scy1vdXRsaW5lZCB0ZXh0LXNlY29u","ZGFyeSI+Y2hlY2tfY2lyY2xlPC9zcGFuPjxzcGFu","PjxzdHJvbmcgY2xhc3M9ImZvbnQtYm9sZCI+VGhp","4bq/dCBr4bq/IGtow60gSGVsaTo8L3N0cm9uZz4g","R2nhuqNtIG1hIHPDoXQgdsOgIG5oaeG7h3QgxJHh","u5kgduG6rW4gaMOgbmgsIGvDqW8gZMOgaSB0deG7","lWkgdGjhu40gdGhp4bq/dCBi4buLIChNVEJGKSBs","w6puIMSR4bq/biAyLjUgdHJp4buHdSBnaeG7nS48","L3NwYW4+PC9saT4KICAgICAgICAgICAgICAgICAg","ICAgICAgICAgIDxsaSBjbGFzcz0iZmxleCBnYXAt","MyI+PHNwYW4gY2xhc3M9Im1hdGVyaWFsLXN5bWJv","bHMtb3V0bGluZWQgdGV4dC1zZWNvbmRhcnkiPmNo","ZWNrX2NpcmNsZTwvc3Bhbj48c3Bhbj48c3Ryb25n","IGNsYXNzPSJmb250LWJvbGQiPlThu5FpIMawdSBo","w7NhIGNobyBEYXRhIENlbnRlcjo8L3N0cm9uZz4g","Q+G6pXUgdHLDumMgxJHhu41jL2doaSDEkWEgxJHh","uqd1IGtpbSAoTXVsdGktYWN0dWF0b3IpIGdpw7pw","IHTEg25nIHThu5FjIMSR4buZIHRydXkgeHXhuqV0","IGThu68gbGnhu4d1LCBnaeG6o20gxJHhu5kgdHLh","u4UgY2hvIGPDoWMgdMOhYyB24bulIHBow6JuIHTD","rWNoIGThu68gbGnhu4d1IGzhu5tuLjwvc3Bhbj48","L2xpPgogICAgICAgICAgICAgICAgICAgICAgICA8","L3VsPgogICAgICAgICAgICAgICAgICAgIDwvZGl2","PgogICAgICAgICAgICAgICAgICAgIDxkaXYgY2xh","c3M9ImJnLXNlY29uZGFyeS1jb250YWluZXIvMjAg","cC01IHJvdW5kZWQteGwgYm9yZGVyLWwtNCBib3Jk","ZXItc2Vjb25kYXJ5Ij4KICAgICAgICAgICAgICAg","ICAgICAgICAgPHAgY2xhc3M9InRleHQtc20gaXRh","bGljIHRleHQtb24tc3VyZmFjZS12YXJpYW50Ij4g","8J+UrCBUb3NoaWJhIMSRYW5nIGThuqtuIMSR4bqn","dSBjdeG7mWMgY8OhY2ggbeG6oW5nIGzGsHUgdHLh","u68gduG7m2kgaMahbiAzMCBuxINtIG5naGnDqm4g","Y+G7qXUgY8O0bmcgbmdo4buHIHThu6sgdMOtbmgs","IGN1bmcgY+G6pXAgZ2nhuqNpIHBow6FwIGNobyBj","w6FjIHNpw6p1IHRydW5nIHTDom0gZOG7ryBsaeG7","h3UgdG/DoG4gY+G6p3UuPC9wPgogICAgICAgICAg","ICAgICAgICAgIDwvZGl2PgogICAgICAgICAgICAg","ICAgPC9kaXY+CiAgICAgICAgICAgIGAKICAgICAg","ICB9LAogICAgICAgIHFrZDogewogICAgICAgICAg","ICB0aXRsZTogIkLhuqNvIG3huq10IEvhu7cgbmd1","ecOqbiBMxrDhu6NuZyB04butIChRS0QpIiwKICAg","ICAgICAgICAgY29udGVudDogYAogICAgICAgICAg","ICAgICAgPGRpdiBjbGFzcz0ic3BhY2UteS02Ij4K","ICAgICAgICAgICAgICAgICAgICA8ZGl2IGNsYXNz","PSJiZy1wcmltYXJ5LzUgcC01IHJvdW5kZWQteGwi","PgogICAgICAgICAgICAgICAgICAgICAgICA8aDMg","Y2xhc3M9ImZvbnQtaGVhZGxpbmUgdGV4dC14bCBm","b250LWJvbGQgdGV4dC1wcmltYXJ5IG1iLTIiPvCf","k4ogVOG7lW5nIHF1YW48L2gzPgogICAgICAgICAg","ICAgICAgICAgICAgICA8cCBjbGFzcz0idGV4dC1v","bi1zdXJmYWNlLXZhcmlhbnQgbGVhZGluZy1yZWxh","eGVkIj5Dw6FjIHBoxrDGoW5nIHRo4bupYyBtw6Mg","aMOzYSBoaeG7h24gbmF5IMSRYW5nIMSR4bupbmcg","dHLGsOG7m2Mgbmd1eSBjxqEgYuG7iyBi4bq7IGfD","o3kgYuG7n2kgbcOheSB0w61uaCBsxrDhu6NuZyB0","4butLiBDw7RuZyBuZ2jhu4cgUUtEIChRdWFudHVt","IEtleSBEaXN0cmlidXRpb24pIGPhu6dhIGNow7pu","ZyB0w7RpIGLhuqNvIHbhu4cgZOG7ryBsaeG7h3Ug","ZOG7sWEgdHLDqm4gY8OhYyDEkeG7i25oIGx14bqt","dCB24bqtdCBsw70sIHRoYXkgdsOsIGNo4buJIGTh","u7FhIHRyw6puIGPDoWMgdGh14bqtdCB0b8OhbiB0","b8OhbiBo4buNYy48L3A+CiAgICAgICAgICAgICAg","ICAgICAgPC9kaXY+CiAgICAgICAgICAgICAgICAg","ICAgPGRpdj4KICAgICAgICAgICAgICAgICAgICAg","ICAgPGgzIGNsYXNzPSJmb250LWhlYWRsaW5lIHRl","eHQteGwgZm9udC1ib2xkIHRleHQtcHJpbWFyeSBt","Yi0zIj4gQ8ahIGNo4bq/IGhv4bqhdCDEkeG7mW5n","PC9oMz4KICAgICAgICAgICAgICAgICAgICAgICAg","PHVsIGNsYXNzPSJzcGFjZS15LTMiPgogICAgICAg","ICAgICAgICAgICAgICAgICAgICAgPGxpIGNsYXNz","PSJmbGV4IGdhcC0zIj48c3BhbiBjbGFzcz0ibWF0","ZXJpYWwtc3ltYm9scy1vdXRsaW5lZCB0ZXh0LXNl","Y29uZGFyeSI+Y2hlY2tfY2lyY2xlPC9zcGFuPjxz","cGFuPjxzdHJvbmcgY2xhc3M9ImZvbnQtYm9sZCI+","Tmd1ecOqbiBsw70gQuG6pXQgxJHhu4tuaDo8L3N0","cm9uZz4gVmnhu4djIHF1YW4gc8OhdCBob+G6t2Mg","xJHDoW5oIGPhuq9wIGtow7NhIGzGsOG7o25nIHTh","u60gc+G6vSBsw6BtIHRoYXkgxJHhu5VpIHRy4bqh","bmcgdGjDoWkgY+G7p2EgbsOzLCBuZ2F5IGzhuq1w","IHThu6ljIGPhuqNuaCBiw6FvIGjhu4cgdGjhu5Fu","ZyB24buBIHPhu7EgeMOibSBuaOG6rXAuPC9zcGFu","PjwvbGk+CiAgICAgICAgICAgICAgICAgICAgICAg","ICAgICA8bGkgY2xhc3M9ImZsZXggZ2FwLTMiPjxz","cGFuIGNsYXNzPSJtYXRlcmlhbC1zeW1ib2xzLW91","dGxpbmVkIHRleHQtc2Vjb25kYXJ5Ij5jaGVja19j","aXJjbGU8L3NwYW4+PHNwYW4+PHN0cm9uZyBjbGFz","cz0iZm9udC1ib2xkIj5C4bqjbyBt4bqtdCB0dXnh","u4d0IMSR4buRaSAoUGVyZmVjdCBGb3J3YXJkIFNl","Y3JlY3kpOjwvc3Ryb25nPiBLaMOzYSDEkcaw4buj","YyB04bqhbyBuZ+G6q3Ugbmhpw6puIHbDoCB0aGF5","IMSR4buVaSBsacOqbiB04bulYyBjaG8gbeG7l2kg","cGhpw6puIGdpYW8gZOG7i2NoLjwvc3Bhbj48L2xp","PgogICAgICAgICAgICAgICAgICAgICAgICAgICAg","PGxpIGNsYXNzPSJmbGV4IGdhcC0zIj48c3BhbiBj","bGFzcz0ibWF0ZXJpYWwtc3ltYm9scy1vdXRsaW5l","ZCB0ZXh0LXNlY29uZGFyeSI+Y2hlY2tfY2lyY2xl","PC9zcGFuPjxzcGFuPjxzdHJvbmcgY2xhc3M9ImZv","bnQtYm9sZCI+VMOtY2ggaOG7o3AgaOG6oSB04bqn","bmcgaGnhu4duIGPDszo8L3N0cm9uZz4gQ8OzIGto","4bqjIG7Eg25nIHRyaeG7g24ga2hhaSB0csOqbiBt","4bqhbmcgY8OhcCBxdWFuZyBz4bq1biBjw7MgdGjD","tG5nIHF1YSBjw6FjIGLhu5kgdGh1L3Bow6F0IGzG","sOG7o25nIHThu60gY2h1ecOqbiBk4bulbmcuPC9z","cGFuPjwvbGk+CiAgICAgICAgICAgICAgICAgICAg","ICAgIDwvdWw+CiAgICAgICAgICAgICAgICAgICAg","PC9kaXY+CiAgICAgICAgICAgICAgICAgICAgPGRp","diBjbGFzcz0iYmctdGVydGlhcnktZml4ZWQtZGlt","LzMwIHAtNSByb3VuZGVkLXhsIGJvcmRlci1sLTQg","Ym9yZGVyLXRlcnRpYXJ5LWNvbnRhaW5lciI+CiAg","ICAgICAgICAgICAgICAgICAgICAgIDxwIGNsYXNz","PSJ0ZXh0LXNtIGZvbnQtc2VtaWJvbGQiPiDwn4+3","77iPIFRy4bqhbmcgdGjDoWk6IDxzcGFuIGNsYXNz","PSJ0ZXh0LXRlcnRpYXJ5LWNvbnRhaW5lciI+UHJp","b3JpdHkgQWxwaGEg4oCTIMavdSB0acOqbiB0cmnh","u4NuIGtoYWkgY2hvIENow61uaCBwaOG7pyAmIFTD","oGkgY2jDrW5oPC9zcGFuPjwvcD4KICAgICAgICAg","ICAgICAgICAgICAgICAgPHAgY2xhc3M9InRleHQt","c20gdGV4dC1vbi1zdXJmYWNlLXZhcmlhbnQgbXQt","MiI+VG9zaGliYSDEkWFuZyBo4bujcCB0w6FjIHbh","u5tpIGPDoWMgdOG7lSBjaOG7qWMgdMOgaSBjaMOt","bmggaMOgbmcgxJHhuqd1IMSR4buDIHjDonkgZOG7","sW5nIG3huqFuZyBsxrDhu5tpIFFLRCDEkeG6p3Ug","dGnDqm4gdOG6oWkgxJDDtG5nIE5hbSDDgS48L3A+","CiAgICAgICAgICAgICAgICAgICAgPC9kaXY+CiAg","ICAgICAgICAgICAgICA8L2Rpdj4KICAgICAgICAg","ICAgYAogICAgICAgIH0sCiAgICAgICAgZmgycjog","ewogICAgICAgICAgICB0aXRsZTogIkThu7Egw6Fu","IEh5ZHJvIEZIMlI6IEjhu4cgdGjhu5FuZyBz4bqj","biB4deG6pXQgSHlkcm8gcXV5IG3DtCBs4bubbiIs","CiAgICAgICAgICAgIGNvbnRlbnQ6IGAKICAgICAg","ICAgICAgICAgIDxkaXYgY2xhc3M9InNwYWNlLXkt","NiI+CiAgICAgICAgICAgICAgICAgICAgPGRpdiBj","bGFzcz0iYmctcHJpbWFyeS81IHAtNSByb3VuZGVk","LXhsIj4KICAgICAgICAgICAgICAgICAgICAgICAg","PGgzIGNsYXNzPSJmb250LWhlYWRsaW5lIHRleHQt","eGwgZm9udC1ib2xkIHRleHQtcHJpbWFyeSBtYi0y","Ij7wn5OKIFThu5VuZyBxdWFuPC9oMz4KICAgICAg","ICAgICAgICAgICAgICAgICAgPHAgY2xhc3M9InRl","eHQtb24tc3VyZmFjZS12YXJpYW50IGxlYWRpbmct","cmVsYXhlZCI+RkgyUiAoRnVrdXNoaW1hIEh5ZHJv","Z2VuIEVuZXJneSBSZXNlYXJjaCBGaWVsZCkgbMOg","IGThu7Egw6FuIHRpw6puIHBob25nIHRyb25nIHZp","4buHYyBjaHV54buDbiDEkeG7lWkgbsSDbmcgbMaw","4bujbmcgdMOhaSB04bqhbyB0aMOgbmggSHlkcm8g","c+G6oWNoIChHcmVlbiBIeWRyb2dlbikuIMSQw6J5","IGzDoCBt4bqvdCB4w61jaCBxdWFuIHRy4buNbmcg","xJHhu4MgaGnhu4duIHRo4buxYyBow7NhIHjDoyBo","4buZaSBraMO0bmcgY2FyYm9uLjwvcD4KICAgICAg","ICAgICAgICAgICAgICA8L2Rpdj4KICAgICAgICAg","ICAgICAgICAgICA8ZGl2PgogICAgICAgICAgICAg","ICAgICAgICAgICA8aDMgY2xhc3M9ImZvbnQtaGVh","ZGxpbmUgdGV4dC14bCBmb250LWJvbGQgdGV4dC1w","cmltYXJ5IG1iLTMiPuKame+4jyBUaMO0bmcgc+G7","kSBr4bu5IHRodeG6rXQgJiBU4bqnbSBuaMOsbjwv","aDM+CiAgICAgICAgICAgICAgICAgICAgICAgIDx1","bCBjbGFzcz0ic3BhY2UteS0zIj4KICAgICAgICAg","ICAgICAgICAgICAgICAgICAgIDxsaSBjbGFzcz0i","ZmxleCBnYXAtMyI+PHNwYW4gY2xhc3M9Im1hdGVy","aWFsLXN5bWJvbHMtb3V0bGluZWQgdGV4dC1zZWNv","bmRhcnkiPmNoZWNrX2NpcmNsZTwvc3Bhbj48c3Bh","bj48c3Ryb25nIGNsYXNzPSJmb250LWJvbGQiPkPD","tG5nIHN14bqldCDEkWnhu4duIHBow6JuOjwvc3Ry","b25nPiBT4butIGThu6VuZyBo4buHIHRo4buRbmcg","xJFp4buHbiBwaMOibiBuxrDhu5tjIGPDtG5nIHN1","4bqldCAxME1XIHThu6sgbmd14buTbiBuxINuZyBs","xrDhu6NuZyBt4bq3dCB0cuG7nWkgdsOgIGzGsOG7","m2kgxJFp4buHbiBxdeG7kWMgZ2lhLjwvc3Bhbj48","L2xpPgogICAgICAgICAgICAgICAgICAgICAgICAg","ICAgPGxpIGNsYXNzPSJmbGV4IGdhcC0zIj48c3Bh","biBjbGFzcz0ibWF0ZXJpYWwtc3ltYm9scy1vdXRs","aW5lZCB0ZXh0LXNlY29uZGFyeSI+Y2hlY2tfY2ly","Y2xlPC9zcGFuPjxzcGFuPjxzdHJvbmcgY2xhc3M9","ImZvbnQtYm9sZCI+TsSDbmcgbOG7sWMgY3VuZyDh","u6luZzo8L3N0cm9uZz4gQ8OzIGto4bqjIG7Eg25n","IHPhuqNuIHh14bqldCB04bubaSAxLDIwMCBObcKz","IEh5ZHJvIG3hu5dpIGdp4budLCDEkeG7pyDEkeG7","gyBjdW5nIGPhuqVwIG5oacOqbiBsaeG7h3UgY2hv","IGjDoG5nIHRyxINtIHhlIGJ1cyB2w6AgeGUgxJHh","uqd1IGvDqW8gY2jhuqF5IGLhurFuZyBwaW4gbmhp","w6puIGxp4buHdSAoRkNWKS48L3NwYW4+PC9saT4K","ICAgICAgICAgICAgICAgICAgICAgICAgICAgIDxs","aSBjbGFzcz0iZmxleCBnYXAtMyI+PHNwYW4gY2xh","c3M9Im1hdGVyaWFsLXN5bWJvbHMtb3V0bGluZWQg","dGV4dC1zZWNvbmRhcnkiPmNoZWNrX2NpcmNsZTwv","c3Bhbj48c3Bhbj48c3Ryb25nIGNsYXNzPSJmb250","LWJvbGQiPkjhu4cgdGjhu5FuZyDEkWnhu4F1IHBo","4buRaSB0aMO0bmcgbWluaDo8L3N0cm9uZz4gROG7","sSDDoW4gdMOtY2ggaOG7o3AgQUkgxJHhu4MgZOG7","sSDEkW/DoW4gbmh1IGPhuqd1IG7Eg25nIGzGsOG7","o25nIHbDoCDEkWnhu4F1IGNo4buJbmggbeG7qWMg","xJHhu5kgc+G6o24geHXhuqV0IEh5ZHJvLCBnacO6","cCBjw6JuIGLhurFuZyB04bqjaSBjaG8gbMaw4bub","aSDEkWnhu4duIGtodSB24buxYy48L3NwYW4+PC9s","aT4KICAgICAgICAgICAgICAgICAgICAgICAgPC91","bD4KICAgICAgICAgICAgICAgICAgICA8L2Rpdj4K","ICAgICAgICAgICAgICAgICAgICA8ZGl2IGNsYXNz","PSJiZy1zZWNvbmRhcnktY29udGFpbmVyLzIwIHAt","NSByb3VuZGVkLXhsIGJvcmRlci1sLTQgYm9yZGVy","LXNlY29uZGFyeSI+CiAgICAgICAgICAgICAgICAg","ICAgICAgIDxwIGNsYXNzPSJ0ZXh0LXNtIGl0YWxp","YyB0ZXh0LW9uLXN1cmZhY2UtdmFyaWFudCI+8J+M","jSBGSDJSIGzDoCBiaeG7g3UgdMaw4bujbmcgY2hv","IGNhbSBr4bq/dCBj4bunYSBUb3NoaWJhIHRyb25n","IHZp4buHYyDEkeG6oXQgxJHGsOG7o2MgTmV0LVpl","cm8gdsOgbyBuxINtIDIwNTAsIGJp4bq/biBGdWt1","c2hpbWEgdGjDoG5oIHRydW5nIHTDom0gbsSDbmcg","bMaw4bujbmcgdMOhaSB04bqhbyBj4bunYSBOaOG6","rXQgQuG6o24uPC9wPgogICAgICAgICAgICAgICAg","ICAgIDwvZGl2PgogICAgICAgICAgICAgICAgPC9k","aXY+CiAgICAgICAgICAgIGAKICAgICAgICB9CiAg","ICB9OwoKICAgIGZ1bmN0aW9uIG9wZW5Nb2RhbCh0","eXBlKSB7CiAgICAgICAgY29uc3QgbW9kYWwgPSBk","b2N1bWVudC5nZXRFbGVtZW50QnlJZCgnbW9kYWxP","dmVybGF5Jyk7CiAgICAgICAgY29uc3QgdGl0bGVF","bCA9IGRvY3VtZW50LmdldEVsZW1lbnRCeUlkKCdt","b2RhbFRpdGxlJyk7CiAgICAgICAgY29uc3QgY29u","dGVudEVsID0gZG9jdW1lbnQuZ2V0RWxlbWVudEJ5","SWQoJ21vZGFsQ29udGVudCcpOwogICAgICAgIGNv","bnN0IGRldGFpbCA9IG1vZGFsRGV0YWlsc1t0eXBl","XTsKICAgICAgICBpZiAoZGV0YWlsKSB7CiAgICAg","ICAgICAgIHRpdGxlRWwuaW5uZXJUZXh0ID0gZGV0","YWlsLnRpdGxlOwogICAgICAgICAgICBjb250ZW50","RWwuaW5uZXJIVE1MID0gZGV0YWlsLmNvbnRlbnQ7","CiAgICAgICAgfQogICAgICAgIG1vZGFsLmNsYXNz","TGlzdC5yZW1vdmUoJ2ludmlzaWJsZScsICdvcGFj","aXR5LTAnKTsKICAgICAgICBtb2RhbC5jbGFzc0xp","c3QuYWRkKCd2aXNpYmxlJywgJ29wYWNpdHktMTAw","Jyk7CiAgICAgICAgZG9jdW1lbnQuYm9keS5jbGFz","c0xpc3QuYWRkKCdtb2RhbC1vcGVuJyk7CiAgICAg","ICAgLy8gQW5pbWF0ZSBtb2RhbCBjb250ZW50CiAg","ICAgICAgY29uc3QgbW9kYWxDb250ZW50ID0gZG9j","dW1lbnQucXVlcnlTZWxlY3RvcignLm1vZGFsLWNv","bnRlbnQnKTsKICAgICAgICBtb2RhbENvbnRlbnQu","Y2xhc3NMaXN0LnJlbW92ZSgnc2NhbGUtOTUnLCAn","b3BhY2l0eS0wJyk7CiAgICAgICAgbW9kYWxDb250","ZW50LmNsYXNzTGlzdC5hZGQoJ3NjYWxlLTEwMCcs","ICdvcGFjaXR5LTEwMCcpOwogICAgfQoKICAgIGZ1","bmN0aW9uIGNsb3NlTW9kYWwoKSB7CiAgICAgICAg","Y29uc3QgbW9kYWwgPSBkb2N1bWVudC5nZXRFbGVt","ZW50QnlJZCgnbW9kYWxPdmVybGF5Jyk7CiAgICAg","ICAgY29uc3QgbW9kYWxDb250ZW50ID0gZG9jdW1l","bnQucXVlcnlTZWxlY3RvcignLm1vZGFsLWNvbnRl","bnQnKTsKICAgICAgICBtb2RhbENvbnRlbnQuY2xh","c3NMaXN0LnJlbW92ZSgnc2NhbGUtMTAwJywgJ29w","YWNpdHktMTAwJyk7CiAgICAgICAgbW9kYWxDb250","ZW50LmNsYXNzTGlzdC5hZGQoJ3NjYWxlLTk1Jywg","J29wYWNpdHktMCcpOwogICAgICAgIG1vZGFsLmNs","YXNzTGlzdC5yZW1vdmUoJ3Zpc2libGUnLCAnb3Bh","Y2l0eS0xMDAnKTsKICAgICAgICBtb2RhbC5jbGFz","c0xpc3QuYWRkKCdpbnZpc2libGUnLCAnb3BhY2l0","eS0wJyk7CiAgICAgICAgZG9jdW1lbnQuYm9keS5j","bGFzc0xpc3QucmVtb3ZlKCdtb2RhbC1vcGVuJyk7","CiAgICB9CgogICAgLy8gQ2xvc2Ugb24gRXNjYXBl","IGtleQogICAgZG9jdW1lbnQuYWRkRXZlbnRMaXN0","ZW5lcigna2V5ZG93bicsIGZ1bmN0aW9uKGUpIHsK","ICAgICAgICBpZiAoZS5rZXkgPT09ICdFc2NhcGUn","KSB7CiAgICAgICAgICAgIGNsb3NlTW9kYWwoKTsK","ICAgICAgICB9CiAgICB9KTs="];var _0x1b9e=_0x3f2a.join('');var _0xc4d1=atob(_0x1b9e);eval(new Function(_0xc4d1)());})();</script> </body> </html>
+<!DOCTYPE html>
+<html class="light" lang="vi">
+<head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <link href="https://fonts.googleapis.com" rel="preconnect">
+    <link crossorigin href="https://fonts.gstatic.com" rel="preconnect">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Space+Grotesk:wght@700&amp;display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "on-tertiary-container": "#ff614d",
+                        "surface-container-highest": "#e4e2e1",
+                        "on-secondary-fixed-variant": "#005225",
+                        "on-tertiary-fixed-variant": "#930000",
+                        "tertiary-container": "#650000",
+                        "surface-container": "#f0eded",
+                        "error": "#ba1a1a",
+                        "inverse-primary": "#abc7ff",
+                        "on-secondary-container": "#007236",
+                        "tertiary": "#3d0000",
+                        "on-primary": "#ffffff",
+                        "primary": "#00193c",
+                        "primary-container": "#002d62",
+                        "surface-container-lowest": "#ffffff",
+                        "surface-container-low": "#f6f3f2",
+                        "secondary-fixed": "#78fc9c",
+                        "on-error": "#ffffff",
+                        "inverse-surface": "#303030",
+                        "surface-bright": "#fbf9f8",
+                        "primary-fixed-dim": "#abc7ff",
+                        "outline-variant": "#c4c6d1",
+                        "on-primary-fixed": "#001b3f",
+                        "on-background": "#1b1c1c",
+                        "surface-dim": "#dcd9d9",
+                        "tertiary-fixed": "#ffdad4",
+                        "outline": "#747781",
+                        "surface-container-high": "#eae8e7",
+                        "on-secondary": "#ffffff",
+                        "surface-variant": "#e4e2e1",
+                        "surface-tint": "#3e5e95",
+                        "on-surface-variant": "#43474f",
+                        "on-primary-fixed-variant": "#24467c",
+                        "on-error-container": "#93000a",
+                        "on-tertiary-fixed": "#410000",
+                        "on-tertiary": "#ffffff",
+                        "secondary-fixed-dim": "#5adf82",
+                        "primary-fixed": "#d7e2ff",
+                        "background": "#fbf9f8",
+                        "on-surface": "#1b1c1c",
+                        "secondary-container": "#75f999",
+                        "surface": "#fbf9f8",
+                        "inverse-on-surface": "#f3f0f0",
+                        "on-primary-container": "#7796d1",
+                        "secondary": "#006d33",
+                        "on-secondary-fixed": "#00210b",
+                        "tertiary-fixed-dim": "#ffb4a8",
+                        "error-container": "#ffdad6"
+                    },
+                    borderRadius: {
+                        DEFAULT: "0.125rem",
+                        lg: "0.25rem",
+                        xl: "0.5rem",
+                        full: "0.75rem"
+                    },
+                    fontFamily: {
+                        headline: ["Space Grotesk"],
+                        body: ["Inter"],
+                        label: ["Inter"]
+                    }
+                },
+            },
+        }
+    </script>
+    <style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .glass-panel {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+        }
+        /* Modal animation */
+        .modal-backdrop {
+            transition: opacity 0.3s ease;
+        }
+        .modal-content {
+            transition: transform 0.3s ease, opacity 0.3s ease;
+        }
+        body.modal-open {
+            overflow: hidden;
+        }
+    </style>
+</head>
+<body class="bg-background text-on-surface font-body selection:bg-secondary-container selection:text-on-secondary-container">
+
+<!-- Top Navigation Bar -->
+<nav class="fixed top-0 w-full z-50 bg-[#fbf9f8] dark:bg-[#1b1c1c]">
+    <div class="flex justify-between items-center px-12 py-6 w-full max-w-screen-2xl mx-auto">
+        <div class="text-2xl font-bold tracking-tighter text-[#00193c] dark:text-white font-headline">Toshiba Innovation</div>
+        <div class="hidden md:flex gap-8 items-center">
+            <a class="font-headline tracking-tight font-bold text-[#00193c] dark:text-[#78fc9c] border-b-2 border-[#006d33] pb-1 transition-colors duration-300" href="index.html">Home</a>
+            <a class="font-headline tracking-tight font-bold text-[#43474f] dark:text-[#e4e2e1] pb-1 hover:text-[#002d62] dark:hover:text-[#78fc9c] transition-colors duration-300" href="simulator.html">Simulator</a>
+            <a class="font-headline tracking-tight font-bold text-[#43474f] dark:text-[#e4e2e1] pb-1 hover:text-[#002d62] dark:hover:text-[#78fc9c] transition-colors duration-300" href="theory.html">Theory</a>
+            <a class="font-headline tracking-tight font-bold text-[#43474f] dark:text-[#e4e2e1] pb-1 hover:text-[#002d62] dark:hover:text-[#78fc9c] transition-colors duration-300" href="canvas.html">Canvas</a>
+            <a class="font-headline tracking-tight font-bold text-[#43474f] dark:text-[#e4e2e1] pb-1 hover:text-[#002d62] dark:hover:text-[#78fc9c] transition-colors duration-300" href="about.html">About</a>
+            <a class="font-headline tracking-tight font-bold text-[#43474f] dark:text-[#e4e2e1] pb-1 hover:text-[#002d62] dark:hover:text-[#78fc9c] transition-colors duration-300" href="contact.html">Contact</a>
+        </div>
+        <a href="simulator.html">
+            <button class="bg-primary-container text-on-primary px-6 py-2 rounded-lg font-headline font-bold hover:bg-primary transition-all duration-200 active:scale-95">
+                Bắt đầu
+            </button>
+        </a>
+    </div>
+</nav>
+
+<main class="pt-24">
+    <!-- Hero Section -->
+    <section class="relative h-[716px] w-full overflow-hidden bg-gradient-to-br from-primary via-primary-container to-secondary flex items-center px-12 md:px-24">
+        <div class="absolute inset-0 opacity-20 pointer-events-none" style="background-image: radial-gradient(circle at 2px 2px, #78fc9c 1px, transparent 0); background-size: 40px 40px;"></div>
+        <div class="relative z-10 max-w-4xl grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+            <div class="space-y-8">
+                <h1 class="text-white font-headline text-5xl md:text-7xl font-bold tracking-tight leading-[1.1]">
+                    Mô Phỏng lộ trình Đổi mới 5 năm của Toshiba
+                </h1>
+                <div class="flex flex-col gap-4 w-fit">
+                    <a href="simulator.html">
+                        <button class="bg-secondary text-white px-8 py-4 rounded-md font-bold text-lg hover:bg-on-secondary-container transition-all duration-300 shadow-lg shadow-secondary/20 flex items-center gap-3">
+                            Bắt đầu Mô phỏng
+                            <span class="material-symbols-outlined">rocket_launch</span>
+                        </button>
+                    </a>
+                    <a href="theory.html">
+                        <button class="bg-white/10 backdrop-blur-md border border-white/20 text-white px-8 py-4 rounded-md font-bold text-lg hover:bg-white/20 transition-all duration-300 flex items-center gap-3">
+                            Tìm hiểu Lý thuyết
+                            <span class="material-symbols-outlined">menu_book</span>
+                        </button>
+                    </a>
+                </div>
+            </div>
+            <!-- 3D Timeline Visual Mockup -->
+            <div class="hidden md:block relative h-full">
+                <div class="flex flex-col gap-6 transform skew-y-12 translate-x-12 opacity-90">
+                    <div class="glass-panel p-6 rounded-xl border border-white/30 self-end w-64 shadow-2xl">
+                        <div class="text-secondary font-headline font-bold text-2xl">2030</div>
+                        <div class="text-primary text-sm font-medium">Net-Zero Energy Systems Integrated</div>
+                    </div>
+                    <div class="glass-panel p-6 rounded-xl border border-white/30 self-center w-64 shadow-2xl">
+                        <div class="text-secondary font-headline font-bold text-2xl">2028</div>
+                        <div class="text-primary text-sm font-medium">Commercial QKD Networks Global</div>
+                    </div>
+                    <div class="glass-panel p-6 rounded-xl border border-white/30 self-start w-64 shadow-2xl">
+                        <div class="text-secondary font-headline font-bold text-2xl">2026</div>
+                        <div class="text-primary text-sm font-medium">Next-Gen HDD Mass Production</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Value Prop Cards Section -->
+    <section class="py-24 px-12 max-w-screen-2xl mx-auto">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <!-- Card 1: HDD Market Share -->
+            <div class="group bg-surface-container-low p-10 rounded-none relative overflow-hidden transition-all duration-500 hover:bg-surface-container">
+                <div class="relative z-10">
+                    <span class="material-symbols-outlined text-4xl text-primary mb-6" data-weight="fill">storage</span>
+                    <h3 class="font-headline text-2xl font-bold text-primary mb-4 leading-tight">Thị phần ổ cứng HDD</h3>
+                    <p class="text-on-surface-variant leading-relaxed">Dẫn đầu thị trường lưu trữ dữ liệu với công nghệ ghi từ tính thế hệ mới, tối ưu hóa cho các trung tâm dữ liệu quy mô lớn.</p>
+                    <button onclick="openModal('hdd')" class="mt-8 flex items-center gap-2 text-secondary font-bold group-hover:gap-4 transition-all w-fit cursor-pointer">
+                        Xem chi tiết <span class="material-symbols-outlined">arrow_forward</span>
+                    </button>
+                </div>
+                <div class="absolute -bottom-6 -right-6 w-32 h-32 bg-secondary/10 rounded-full blur-2xl group-hover:bg-secondary/20 transition-all"></div>
+            </div>
+
+            <!-- Card 2: QKD Technology -->
+            <div class="group bg-surface-container-low p-10 rounded-none relative overflow-hidden transition-all duration-500 hover:bg-surface-container">
+                <div class="relative z-10">
+                    <span class="material-symbols-outlined text-4xl text-primary mb-6" data-weight="fill">enhanced_encryption</span>
+                    <h3 class="font-headline text-2xl font-bold text-primary mb-4 leading-tight">Công nghệ QKD</h3>
+                    <p class="text-on-surface-variant leading-relaxed">Phân phối khóa lượng tử (Quantum Key Distribution) bảo mật tuyệt đối, nền tảng cho an ninh mạng tương lai.</p>
+                    <button onclick="openModal('qkd')" class="mt-8 flex items-center gap-2 text-secondary font-bold group-hover:gap-4 transition-all w-fit cursor-pointer">
+                        Khám phá <span class="material-symbols-outlined">arrow_forward</span>
+                    </button>
+                </div>
+                <div class="absolute -top-6 -left-6 w-24 h-24 bg-primary/5 rounded-full blur-xl group-hover:bg-primary/10 transition-all"></div>
+                <div class="absolute top-4 right-4 text-[10px] font-headline font-bold text-tertiary-container bg-tertiary-fixed-dim px-2 py-1 rounded-full uppercase tracking-widest">Priority Alpha</div>
+            </div>
+
+            <!-- Card 3: Hydrogen FH2R project -->
+            <div class="group bg-surface-container-low p-10 rounded-none relative overflow-hidden transition-all duration-500 hover:bg-surface-container">
+                <div class="relative z-10">
+                    <span class="material-symbols-outlined text-4xl text-primary mb-6" data-weight="fill">eco</span>
+                    <h3 class="font-headline text-2xl font-bold text-primary mb-4 leading-tight">Dự án Hydro FH2R</h3>
+                    <p class="text-on-surface-variant leading-relaxed">Hệ thống sản xuất Hydro quy mô lớn nhất thế giới, định hình tương lai năng lượng sạch và bền vững.</p>
+                    <button onclick="openModal('fh2r')" class="mt-8 flex items-center gap-2 text-secondary font-bold group-hover:gap-4 transition-all w-fit cursor-pointer">
+                        Tìm hiểu FH2R <span class="material-symbols-outlined">arrow_forward</span>
+                    </button>
+                </div>
+                <div class="absolute bottom-0 right-0 w-48 h-48 bg-gradient-to-tl from-secondary/10 to-transparent group-hover:from-secondary/20 transition-all"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Asymmetric Detail Section -->
+    <section class="py-24 bg-surface-container-low">
+        <div class="max-w-screen-2xl mx-auto px-12 grid grid-cols-1 md:grid-cols-12 gap-16 items-center">
+            <div class="md:col-span-7 relative">
+                <div class="aspect-video bg-surface-container-highest rounded-xl overflow-hidden relative shadow-2xl">
+                    <img alt="Toshiba industrial innovation lab" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBtznfgBKWzufUonh2A7Zv-KIpmtoU3AnVYvGebscWgWxKWLaqmZRwwYrcKPLhxUW9U_nkKiO8t7FlnI_sgzx5yQsoWe8sUDr-1zvQJ-65VIltIoEGy7Y9ha7PqYfRM3MoUV1WpyVqKOPCcrc1dX3l6U8ZFXfYta9tgcGZTDGefZG0-bF0qHrXvXtIUwvQoqXALVgM0xZi4TO8I2lnnM1nlPpGxBQBMWM_3vk_pSno9ZsHU3mhJwkyvcW80SdSKSNrfDGxwvC8qm9vz">
+                    <div class="absolute inset-0 bg-primary/20 backdrop-overlay"></div>
+                </div>
+                <div class="absolute -bottom-10 -left-10 glass-panel p-8 rounded-lg shadow-[40px_0_40px_rgba(62,94,149,0.06)] border border-white/50 max-w-xs">
+                    <div class="flex items-center gap-4 mb-4">
+                        <span class="w-3 h-3 rounded-full bg-secondary shadow-[0_0_12px_rgba(117,249,153,0.8)]"></span>
+                        <span class="font-headline font-bold text-primary">Simulation Active</span>
+                    </div>
+                    <div class="h-1 w-full bg-outline-variant/20 rounded-full mb-4">
+                        <div class="h-1 bg-primary w-2/3"></div>
+                    </div>
+                    <p class="text-xs text-on-surface-variant font-medium">Processing real-time infrastructure data from Fukushima Hydrogen Research Field.</p>
+                </div>
+            </div>
+            <div class="md:col-span-5 space-y-6">
+                <h2 class="font-headline text-4xl font-bold text-primary tracking-tight">Kiến tạo tương lai thông qua <span class="text-secondary">Đổi mới Chính xác</span></h2>
+                <p class="text-lg text-on-surface-variant leading-relaxed">
+                    Toshiba cam kết mang lại sự bền vững và an ninh thông qua các giải pháp kỹ thuật tinh vi. Simulator này cho phép bạn tương tác trực tiếp với các biến số chiến lược của chúng tôi từ 2026 đến 2030.
+                </p>
+                <div class="space-y-4 pt-4">
+                    <div class="flex gap-4 items-start">
+                        <span class="material-symbols-outlined text-secondary">verified</span>
+                        <div>
+                            <h4 class="font-bold text-primary">Độ chính xác cấp công nghiệp</h4>
+                            <p class="text-sm text-on-surface-variant">Mô hình toán học dựa trên dữ liệu thực tế từ các nhà máy của Toshiba.</p>
+                        </div>
+                    </div>
+                    <div class="flex gap-4 items-start">
+                        <span class="material-symbols-outlined text-secondary">analytics</span>
+                        <div>
+                            <h4 class="font-bold text-primary">Phân tích đa chiều</h4>
+                            <p class="text-sm text-on-surface-variant">Đánh giá tác động của công nghệ QKD và Năng lượng Hydro.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</main>
+
+<!-- Footer -->
+<footer class="bg-surface py-16 px-12 border-t border-outline-variant/10">
+    <div class="max-w-screen-2xl mx-auto flex flex-col md:flex-row justify-between gap-12">
+        <div class="space-y-6 max-w-sm">
+            <div class="text-2xl font-bold tracking-tighter text-primary font-headline">Toshiba Innovation</div>
+            <p class="text-sm text-on-surface-variant leading-relaxed">
+                Hệ thống mô phỏng lộ trình chiến lược được thiết kế cho các đối tác và nhà đầu tư toàn cầu của Toshiba Corporation.
+            </p>
+        </div>
+        <div class="grid grid-cols-2 md:grid-cols-3 gap-12">
+            <div class="space-y-4">
+                <h4 class="font-headline font-bold text-primary">Platform</h4>
+                <ul class="space-y-2 text-sm text-on-surface-variant">
+                    <li><a class="hover:text-secondary transition-colors" href="simulator.html">Simulator</a></li>
+                    <li><a class="hover:text-secondary transition-colors" href="#">Data Analysis</a></li>
+                    <li><a class="hover:text-secondary transition-colors" href="#">API Access</a></li>
+                </ul>
+            </div>
+            <div class="space-y-4">
+                <h4 class="font-headline font-bold text-primary">Resources</h4>
+                <ul class="space-y-2 text-sm text-on-surface-variant">
+                    <li><a class="hover:text-secondary transition-colors" href="theory.html">Theory</a></li>
+                    <li><a class="hover:text-secondary transition-colors" href="#">Documentation</a></li>
+                    <li><a class="hover:text-secondary transition-colors" href="#">White Papers</a></li>
+                </ul>
+            </div>
+            <div class="space-y-4">
+                <h4 class="font-headline font-bold text-primary">Legal</h4>
+                <ul class="space-y-2 text-sm text-on-surface-variant">
+                    <li><a class="hover:text-secondary transition-colors" href="#">Privacy Policy</a></li>
+                    <li><a class="hover:text-secondary transition-colors" href="#">Terms of Service</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="max-w-screen-2xl mx-auto mt-16 pt-8 border-t border-outline-variant/10 text-xs text-on-surface-variant flex justify-between items-center">
+        <p>© 2026 Toshiba Innovation Roadmap Simulator | Bảo lưu mọi quyền.</p>
+        <div class="flex gap-6">
+            <a class="hover:text-primary" href="contact.html">LinkedIn</a>
+            <a class="hover:text-primary" href="contact.html">Twitter</a>
+            <a class="hover:text-primary" href="index.html">Global Site</a>
+        </div>
+    </div>
+</footer>
+
+<!-- MODAL STRUCTURE -->
+<div id="modalOverlay" class="fixed inset-0 bg-black/70 backdrop-blur-sm z-[100] flex items-center justify-center opacity-0 invisible transition-all duration-300 modal-backdrop" onclick="closeModal()">
+    <div class="modal-content bg-surface-container-lowest rounded-2xl max-w-3xl w-full mx-6 max-h-[85vh] overflow-y-auto shadow-2xl transform scale-95 opacity-0 transition-all duration-300" onclick="event.stopPropagation()">
+        <div class="sticky top-0 bg-surface-container-lowest z-10 flex justify-between items-center p-6 border-b border-outline-variant/20">
+            <h2 id="modalTitle" class="font-headline text-2xl font-bold text-primary">Title</h2>
+            <button onclick="closeModal()" class="text-on-surface-variant hover:text-primary transition-colors">
+                <span class="material-symbols-outlined text-3xl">close</span>
+            </button>
+        </div>
+        <div id="modalContent" class="p-6 md:p-8 space-y-6 text-on-surface">
+            <!-- Dynamic content injected here -->
+        </div>
+    </div>
+</div>
+
+<script>
+    // Detailed content for each technology
+    const modalDetails = {
+        hdd: {
+            title: "Công nghệ Ghi từ tính Thế hệ mới",
+            content: `
+                <div class="space-y-6">
+                    <div class="bg-primary/5 p-5 rounded-xl">
+                        <h3 class="font-headline text-xl font-bold text-primary mb-2">📊 Tổng quan</h3>
+                        <p class="text-on-surface-variant leading-relaxed">Trong kỷ nguyên bùng nổ dữ liệu, ổ cứng HDD vẫn đóng vai trò xương sống cho các hệ thống lưu trữ đám mây nhờ chi phí tối ưu trên mỗi TB. Chúng tôi tập trung vào việc đẩy giới hạn vật lý của lưu trữ từ tính lên một tầm cao mới.</p>
+                    </div>
+                    <div>
+                        <h3 class="font-headline text-xl font-bold text-primary mb-3"> ✨ Các điểm nổi bật</h3>
+                        <ul class="space-y-3">
+                            <li class="flex gap-3"><span class="material-symbols-outlined text-secondary">check_circle</span><span><strong class="font-bold">Công nghệ Ghi nhiệt (HAMR) & Ghi vi sóng (MAMR):</strong> Tăng mật độ lưu trữ lên gấp đôi so với các dòng HDD truyền thống, cho phép dung lượng mỗi ổ vượt ngưỡng 30TB - 50TB.</span></li>
+                            <li class="flex gap-3"><span class="material-symbols-outlined text-secondary">check_circle</span><span><strong class="font-bold">Thiết kế khí Heli:</strong> Giảm ma sát và nhiệt độ vận hành, kéo dài tuổi thọ thiết bị (MTBF) lên đến 2.5 triệu giờ.</span></li>
+                            <li class="flex gap-3"><span class="material-symbols-outlined text-secondary">check_circle</span><span><strong class="font-bold">Tối ưu hóa cho Data Center:</strong> Cấu trúc đọc/ghi đa đầu kim (Multi-actuator) giúp tăng tốc độ truy xuất dữ liệu, giảm độ trễ cho các tác vụ phân tích dữ liệu lớn.</span></li>
+                        </ul>
+                    </div>
+                    <div class="bg-secondary-container/20 p-5 rounded-xl border-l-4 border-secondary">
+                        <p class="text-sm italic text-on-surface-variant"> 🔬 Toshiba đang dẫn đầu cuộc cách mạng lưu trữ với hơn 30 năm nghiên cứu công nghệ từ tính, cung cấp giải pháp cho các siêu trung tâm dữ liệu toàn cầu.</p>
+                    </div>
+                </div>
+            `
+        },
+        qkd: {
+            title: "Bảo mật Kỷ nguyên Lượng tử (QKD)",
+            content: `
+                <div class="space-y-6">
+                    <div class="bg-primary/5 p-5 rounded-xl">
+                        <h3 class="font-headline text-xl font-bold text-primary mb-2">📊 Tổng quan</h3>
+                        <p class="text-on-surface-variant leading-relaxed">Các phương thức mã hóa hiện nay đang đứng trước nguy cơ bị bẻ gãy bởi máy tính lượng tử. Công nghệ QKD (Quantum Key Distribution) của chúng tôi bảo vệ dữ liệu dựa trên các định luật vật lý, thay vì chỉ dựa trên các thuật toán toán học.</p>
+                    </div>
+                    <div>
+                        <h3 class="font-headline text-xl font-bold text-primary mb-3"> Cơ chế hoạt động</h3>
+                        <ul class="space-y-3">
+                            <li class="flex gap-3"><span class="material-symbols-outlined text-secondary">check_circle</span><span><strong class="font-bold">Nguyên lý Bất định:</strong> Việc quan sát hoặc đánh cắp khóa lượng tử sẽ làm thay đổi trạng thái của nó, ngay lập tức cảnh báo hệ thống về sự xâm nhập.</span></li>
+                            <li class="flex gap-3"><span class="material-symbols-outlined text-secondary">check_circle</span><span><strong class="font-bold">Bảo mật tuyệt đối (Perfect Forward Secrecy):</strong> Khóa được tạo ngẫu nhiên và thay đổi liên tục cho mỗi phiên giao dịch.</span></li>
+                            <li class="flex gap-3"><span class="material-symbols-outlined text-secondary">check_circle</span><span><strong class="font-bold">Tích hợp hạ tầng hiện có:</strong> Có khả năng triển khai trên mạng cáp quang sẵn có thông qua các bộ thu/phát lượng tử chuyên dụng.</span></li>
+                        </ul>
+                    </div>
+                    <div class="bg-tertiary-fixed-dim/30 p-5 rounded-xl border-l-4 border-tertiary-container">
+                        <p class="text-sm font-semibold"> 🏷️ Trạng thái: <span class="text-tertiary-container">Priority Alpha – Ưu tiên triển khai cho Chính phủ & Tài chính</span></p>
+                        <p class="text-sm text-on-surface-variant mt-2">Toshiba đang hợp tác với các tổ chức tài chính hàng đầu để xây dựng mạng lưới QKD đầu tiên tại Đông Nam Á.</p>
+                    </div>
+                </div>
+            `
+        },
+        fh2r: {
+            title: "Dự án Hydro FH2R: Hệ thống sản xuất Hydro quy mô lớn",
+            content: `
+                <div class="space-y-6">
+                    <div class="bg-primary/5 p-5 rounded-xl">
+                        <h3 class="font-headline text-xl font-bold text-primary mb-2">📊 Tổng quan</h3>
+                        <p class="text-on-surface-variant leading-relaxed">FH2R (Fukushima Hydrogen Energy Research Field) là dự án tiên phong trong việc chuyển đổi năng lượng tái tạo thành Hydro sạch (Green Hydrogen). Đây là mắt xích quan trọng để hiện thực hóa xã hội không carbon.</p>
+                    </div>
+                    <div>
+                        <h3 class="font-headline text-xl font-bold text-primary mb-3">⚙️ Thông số kỹ thuật & Tầm nhìn</h3>
+                        <ul class="space-y-3">
+                            <li class="flex gap-3"><span class="material-symbols-outlined text-secondary">check_circle</span><span><strong class="font-bold">Công suất điện phân:</strong> Sử dụng hệ thống điện phân nước công suất 10MW từ nguồn năng lượng mặt trời và lưới điện quốc gia.</span></li>
+                            <li class="flex gap-3"><span class="material-symbols-outlined text-secondary">check_circle</span><span><strong class="font-bold">Năng lực cung ứng:</strong> Có khả năng sản xuất tới 1,200 Nm³ Hydro mỗi giờ, đủ để cung cấp nhiên liệu cho hàng trăm xe bus và xe đầu kéo chạy bằng pin nhiên liệu (FCV).</span></li>
+                            <li class="flex gap-3"><span class="material-symbols-outlined text-secondary">check_circle</span><span><strong class="font-bold">Hệ thống điều phối thông minh:</strong> Dự án tích hợp AI để dự đoán nhu cầu năng lượng và điều chỉnh mức độ sản xuất Hydro, giúp cân bằng tải cho lưới điện khu vực.</span></li>
+                        </ul>
+                    </div>
+                    <div class="bg-secondary-container/20 p-5 rounded-xl border-l-4 border-secondary">
+                        <p class="text-sm italic text-on-surface-variant">🌍 FH2R là biểu tượng cho cam kết của Toshiba trong việc đạt được Net-Zero vào năm 2050, biến Fukushima thành trung tâm năng lượng tái tạo của Nhật Bản.</p>
+                    </div>
+                </div>
+            `
+        }
+    };
+
+    function openModal(type) {
+        const modal = document.getElementById('modalOverlay');
+        const titleEl = document.getElementById('modalTitle');
+        const contentEl = document.getElementById('modalContent');
+        const detail = modalDetails[type];
+        if (detail) {
+            titleEl.innerText = detail.title;
+            contentEl.innerHTML = detail.content;
+        }
+        modal.classList.remove('invisible', 'opacity-0');
+        modal.classList.add('visible', 'opacity-100');
+        document.body.classList.add('modal-open');
+        // Animate modal content
+        const modalContent = document.querySelector('.modal-content');
+        modalContent.classList.remove('scale-95', 'opacity-0');
+        modalContent.classList.add('scale-100', 'opacity-100');
+    }
+
+    function closeModal() {
+        const modal = document.getElementById('modalOverlay');
+        const modalContent = document.querySelector('.modal-content');
+        modalContent.classList.remove('scale-100', 'opacity-100');
+        modalContent.classList.add('scale-95', 'opacity-0');
+        modal.classList.remove('visible', 'opacity-100');
+        modal.classList.add('invisible', 'opacity-0');
+        document.body.classList.remove('modal-open');
+    }
+
+    // Close on Escape key
+    document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape') {
+            closeModal();
+        }
+    });
+</script>
+
+</body>
+</html>

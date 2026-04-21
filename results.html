@@ -1,1 +1,589 @@
-<!DOCTYPE html> <html class="light" lang="vi"><head> <meta charset="utf-8"/> <meta content="width=device-width, initial-scale=1.0" name="viewport"/> <title>Bảng Điều Khiển Kết Quả | Toshiba Innovation</title> <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script> <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script> <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;family=Inter:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/> <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/> <script id="tailwind-config"> tailwind.config = { darkMode: "class", theme: { extend: { "colors": { "on-tertiary-container": "#ff614d", "surface-container-highest": "#e4e2e1", "on-secondary-fixed-variant": "#005225", "on-tertiary-fixed-variant": "#930000", "tertiary-container": "#650000", "surface-container": "#f0eded", "error": "#ba1a1a", "inverse-primary": "#abc7ff", "on-secondary-container": "#007236", "tertiary": "#3d0000", "on-primary": "#ffffff", "primary": "#00193c", "primary-container": "#002d62", "surface-container-lowest": "#ffffff", "surface-container-low": "#f6f3f2", "secondary-fixed": "#78fc9c", "on-error": "#ffffff", "inverse-surface": "#303030", "surface-bright": "#fbf9f8", "primary-fixed-dim": "#abc7ff", "outline-variant": "#c4c6d1", "on-primary-fixed": "#001b3f", "on-background": "#1b1c1c", "surface-dim": "#dcd9d9", "tertiary-fixed": "#ffdad4", "outline": "#747781", "surface-container-high": "#eae8e7", "on-secondary": "#ffffff", "surface-variant": "#e4e2e1", "surface-tint": "#3e5e95", "on-surface-variant": "#43474f", "on-primary-fixed-variant": "#24467c", "on-error-container": "#93000a", "on-tertiary-fixed": "#410000", "on-tertiary": "#ffffff", "secondary-fixed-dim": "#5adf82", "primary-fixed": "#d7e2ff", "background": "#fbf9f8", "on-surface": "#1b1c1c", "secondary-container": "#75f999", "surface": "#fbf9f8", "inverse-on-surface": "#f3f0f0", "on-primary-container": "#7796d1", "secondary": "#006d33", "on-secondary-fixed": "#00210b", "tertiary-fixed-dim": "#ffb4a8", "error-container": "#ffdad6" }, "borderRadius": { "DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem" }, "fontFamily": { "headline": ["Space Grotesk"], "body": ["Inter"], "label": ["Inter"] } }, }, } </script> <style>.material-symbols-outlined{font-variation-settings:'FILL' 0,'wght' 400,'GRAD' 0,'opsz' 24}.hide-scrollbar::-webkit-scrollbar{display:none}.hide-scrollbar{-ms-overflow-style:none;scrollbar-width:none}.carousel-track{display:flex;gap:1rem;animation:scrollCarousel 20s linear infinite}.carousel-track:hover{animation-play-state:paused}@keyframes scrollCarousel{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}.info-tooltip{position:relative;cursor:help;border-bottom:1px dashed #747781}.info-tooltip:hover::after{content:attr(data-tooltip);position:absolute;background:#002d62;color:white;font-size:12px;padding:6px 10px;border-radius:8px;white-space:nowrap;bottom:150%;left:50%;transform:translateX(-50%);z-index:100;box-shadow:0 4px 12px rgba(0,0,0,0.15);pointer-events:none}.collab-popup{position:absolute;left:100%;top:0;margin-left:8px;background:#002d62;color:white;padding:8px 12px;border-radius:8px;font-size:12px;white-space:nowrap;box-shadow:0 4px 10px rgba(0,0,0,0.2);z-index:200;display:none}.collab-item{position:relative}</style> </head> <body class="bg-surface text-on-surface font-body selection:bg-secondary-container"> <nav class="fixed top-0 w-full z-50 bg-[#fbf9f8] dark:bg-[#1b1c1c] transition-colors duration-300"> <div class="flex justify-between items-center px-12 py-6 w-full max-w-screen-2xl mx-auto"> <div class="text-2xl font-bold tracking-tighter text-[#00193c] dark:text-white font-headline"> Toshiba Innovation </div> <div class="hidden md:flex items-center gap-8"> <a class="text-[#43474f] dark:text-[#e4e2e1] pb-1 hover:text-[#002d62] dark:hover:text-[#78fc9c] transition-colors duration-300 font-headline font-bold tracking-tight" href="index.html">Home</a> <a class="text-[#00193c] dark:text-[#78fc9c] border-b-2 border-[#006d33] pb-1 font-headline font-bold tracking-tight" href="simulator.html">Simulator</a> <a class="text-[#43474f] dark:text-[#e4e2e1] pb-1 hover:text-[#002d62] dark:hover:text-[#78fc9c] transition-colors duration-300 font-headline font-bold tracking-tight" href="theory.html">Theory</a> <a class="text-[#43474f] dark:text-[#e4e2e1] pb-1 hover:text-[#002d62] dark:hover:text-[#78fc9c] transition-colors duration-300 font-headline font-bold tracking-tight" href="canvas.html">Canvas</a> <a class="text-[#43474f] dark:text-[#e4e2e1] pb-1 hover:text-[#002d62] dark:hover:text-[#78fc9c] transition-colors duration-300 font-headline font-bold tracking-tight" href="about.html">About</a> <a class="text-[#43474f] dark:text-[#e4e2e1] pb-1 hover:text-[#002d62] dark:hover:text-[#78fc9c] transition-colors duration-300 font-headline font-bold tracking-tight" href="contact.html">Contact</a> </div> <button class="bg-primary-container text-on-primary-container px-6 py-2 rounded-md font-headline font-bold scale-95 duration-200 hover:bg-primary hover:text-on-primary"> Bắt đầu </button> </div> </nav> <aside class="h-screen w-64 fixed left-0 top-0 border-r border-[#43474f]/15 bg-[#f6f3f2]/70 dark:bg-[#1b1c1c]/70 backdrop-blur-xl shadow-[40px_0_40px_rgba(62,94,149,0.06)] pt-24 hidden md:flex flex-col p-4 z-40"> <div class="mb-8 px-2"> <h2 class="font-headline text-lg font-bold text-[#00193c]">Innovation Hub</h2> <p class="text-xs text-on-surface-variant">Roadmap v2.4</p> </div> <div class="space-y-1 flex-1"> <a class="flex items-center gap-3 px-4 py-3 bg-[#002d62] text-white rounded-md transition-all duration-200 ease-in-out" href="#"> <span class="material-symbols-outlined">dashboard</span> <span class="font-medium text-sm">Tổng Quan</span> </a> <a class="flex items-center gap-3 px-4 py-3 text-[#43474f] hover:bg-[#e4e2e1] rounded-md transition-all duration-200 ease-in-out" href="about.html"> <span class="material-symbols-outlined">timeline</span> <span class="font-medium text-sm">Dòng Thời Gian</span> </a> <a class="flex items-center gap-3 px-4 py-3 text-[#43474f] hover:bg-[#e4e2e1] rounded-md transition-all duration-200 ease-in-out" href="theory.html"> <span class="material-symbols-outlined">inventory_2</span> <span class="font-medium text-sm">Tài Nguyên</span> </a> <div class="collab-item relative"> <a class="flex items-center gap-3 px-4 py-3 text-[#43474f] hover:bg-[#e4e2e1] rounded-md transition-all duration-200 ease-in-out cursor-pointer" id="collabLink"> <span class="material-symbols-outlined">group</span> <span class="font-medium text-sm">Cộng Tác Viên</span> </a> <div class="collab-popup" id="collabPopup"> Thực hiện dự án: PN Chính </div> </div> <a class="flex items-center gap-3 px-4 py-3 text-[#43474f] hover:bg-[#e4e2e1] rounded-md transition-all duration-200 ease-in-out" href="#" id="settingsLink"> <span class="material-symbols-outlined">settings</span> <span class="font-medium text-sm">Cài Đặt</span> </a> </div> <div class="pt-4 border-t border-outline-variant/15 space-y-1"> <a class="flex items-center gap-3 px-4 py-3 text-[#43474f] hover:bg-[#e4e2e1] rounded-md text-sm" href="#" id="docLink"> <span class="material-symbols-outlined">description</span> <span>Tài Liệu</span> </a> <a class="flex items-center gap-3 px-4 py-3 text-[#43474f] hover:bg-[#e4e2e1] rounded-md text-sm" href="contact.html"> <span class="material-symbols-outlined">help</span> <span>Hỗ Trợ</span> </a> <button class="w-full mt-4 bg-surface-container-highest text-primary font-bold py-2 rounded-md text-sm scale-95 duration-200" onclick="window.location.href='simulator.html'"> Quay Lại Mô Phỏng </button> </div> </aside> <main class="md:pl-64 pt-24 pb-12 min-h-screen"> <div class="max-w-screen-2xl mx-auto px-6 md:px-12"> <section class="mb-8"> <div class="bg-surface-container-low rounded-xl p-6 relative overflow-hidden"> <div class="flex justify-between items-end mb-2"> <div> <h3 class="font-headline text-xl font-bold text-primary tracking-tight">Đóng Góp Vào Tăng Trưởng</h3> <p class="text-on-surface-variant text-sm flex items-center gap-2"> Các yếu tố chính ảnh hưởng đến CAGR <div class="flex items-center gap-2 font-sans"> <span class="text-base font-medium text-slate-800 tracking-tight"> Các yếu tố chính ảnh hưởng đến CAGR </span> <div class="group relative flex items-center"> <button class="flex h-5 w-5 items-center justify-center rounded-full bg-slate-200 text-xs font-bold text-slate-500 hover:bg-blue-500 hover:text-white transition-colors"> ? </button> <div class="absolute bottom-full left-1/2 mb-2 hidden w-max -translate-x-1/2 rounded bg-slate-800 p-2 text-xs text-white shadow-lg group-hover:block"> <span class="font-mono italic text-blue-300">Base_Growth × Multiplier_Dynamic</span> <p class="mt-1 opacity-80">với trọng số từng yếu tố</p> <div class="absolute top-full left-1/2 -ml-1 border-4 border-transparent border-t-slate-800"></div> </div> </div> </div> </p> </div> <span class="bg-secondary-container text-on-secondary-container px-3 py-1 rounded-full text-xs font-bold">CẬP NHẬT TRỰC TIẾP</span> </div> <div class="relative w-full overflow-hidden py-2"> <div class="carousel-track" id="contributionCarousel"></div> </div> </div> </section> <section class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-8"> <div class="bg-surface-container-low p-6 rounded-xl relative group"> <div class="absolute top-4 right-4 text-on-surface-variant/20 group-hover:text-primary transition-colors"> <span class="material-symbols-outlined text-4xl">payments</span> </div> <p class="text-on-surface-variant text-sm font-medium mb-1">Doanh Thu Dự Báo 2030</p> <h4 class="font-headline text-3xl font-bold text-primary" id="forecastRevenue">$42.8B</h4> <div class="mt-4 flex items-center text-secondary text-sm font-bold" id="revenueVsBaseline"></div> </div> <div class="bg-surface-container-low p-6 rounded-xl border-l-4 border-error"> <div class="flex items-center gap-1.5 mb-1 group"> <span class="text-sm font-semibold text-slate-700 tracking-tight uppercase"> Điểm Rủi Ro </span> <div class="relative flex items-center cursor-help"> <span class="material-symbols-outlined text-[16px] text-slate-400 group-hover:text-red-500 transition-colors"> help_outline </span> <div class="absolute bottom-full left-0 mb-2 hidden group-hover:block z-50"> <div class="bg-slate-900 text-white text-[11px] leading-relaxed p-3 rounded-lg shadow-xl border border-slate-700 min-w-[280px]"> <div class="font-bold text-slate-400 mb-1 border-b border-slate-700 pb-1 uppercase tracking-tighter"> Công thức tính toán </div> <code class="font-mono text-amber-300 break-words leading-5"> Rủi ro = 25*INC% + 55*RAD% - 15*SPD% - 12*COP% - 8*SEN% - 10*SEI% - 12*TRA% - 6*LEA% </code> </div> <div class="w-2 h-2 bg-slate-900 rotate-45 ml-2 -mt-1 border-r border-b border-slate-700"></div> </div> </div> </div> <div class="flex items-baseline gap-2"> <h4 class="font-headline text-3xl font-bold text-error" id="riskScore">7.4</h4> <span class="text-xs font-bold uppercase tracking-widest text-on-tertiary-container" id="riskLabel">Cảnh Báo Cao</span> </div> <p class="mt-4 text-xs text-on-surface-variant leading-relaxed" id="riskDescription"></p> </div> <div class="bg-surface-container-low p-6 rounded-xl"> <p class="text-on-surface-variant text-sm font-medium mb-1">Dự Báo Tăng Trưởng (CAGR)</p> <h4 class="font-headline text-3xl font-bold text-primary" id="growthCagr">8.9%</h4> <div class="mt-4 h-2 w-full bg-surface-container-highest rounded-full"> <div class="h-full bg-primary-container rounded-full" id="growthBar" style="width:70%"></div> </div> <p class="mt-2 text-[10px] text-on-surface-variant uppercase font-bold tracking-tighter">Hiệu Suất Dẫn Đầu Ngành</p> </div> <div class="bg-primary text-on-primary p-6 rounded-xl shadow-lg relative overflow-hidden"> <div class="absolute -right-4 -bottom-4 w-24 h-24 bg-secondary/20 rounded-full blur-3xl"></div> <p class="text-on-primary/70 text-sm font-medium mb-1">Điểm Tổng Hợp</p> <h4 class="font-headline text-4xl font-bold text-secondary-fixed" id="aggregateScore">88<span class="text-lg opacity-50">/100</span></h4> <div class="mt-4 flex gap-1" id="scoreStars"></div> </div> </section> <section class="mb-8 bg-primary/5 rounded-xl p-6 border border-primary/20"> <div class="flex items-start gap-4"> <div class="w-10 h-10 bg-primary rounded-full flex items-center justify-center shrink-0"> <span class="material-symbols-outlined text-white">gavel</span> </div> <div> <h3 class="font-headline text-xl font-bold text-primary mb-2">NHẬN ĐỊNH CHIẾN LƯỢC</h3> <p class="text-lg font-bold text-on-surface mb-2" id="verdictMain"></p> <p class="text-sm text-on-surface-variant leading-relaxed" id="verdictDetail"></p> </div> </div> </section> <section class="grid grid-cols-1 lg:grid-cols-3 gap-6 mb-8"> <div class="lg:col-span-2 space-y-6"> <div class="bg-surface-container-low p-8 rounded-xl"> <div class="flex justify-between items-center mb-6"> <div> <h3 class="font-headline text-xl font-bold text-primary">Dự Báo Doanh Thu (2025-2030)</h3> <p class="text-sm text-on-surface-variant">Doanh thu tổng hợp hàng năm (tỷ USD)</p> </div> </div> <div class="w-full h-64"> <canvas id="revenueChart"></canvas> </div> </div> <div class="bg-surface-container-low p-8 rounded-xl"> <div class="flex justify-between items-center mb-6"> <div> <h3 class="font-headline text-xl font-bold text-primary">Tăng Trưởng Hàng Năm (%)</h3> <p class="text-sm text-on-surface-variant">Tốc độ tăng trưởng doanh thu từng năm</p> </div> </div> <div class="w-full h-64"> <canvas id="growthChart"></canvas> </div> </div> </div> <div class="bg-surface-container-low p-5 rounded-xl flex flex-col"> <h3 class="font-headline text-lg font-bold text-primary mb-4 border-b border-outline-variant/20 pb-2"> Phân Tích Năng Lực &amp; Chiến Lược </h3> <div class="flex flex-col items-center"> <p class="text-[10px] font-bold text-on-surface-variant uppercase tracking-widest mb-2 opacity-80"> Năng Lực Động </p> <div class="relative w-full max-w-[380px] max-h-[380px] aspect-square"> <canvas class="w-full h-full" id="radarDynamic"></canvas> </div> </div> <div class="w-2/3 h-[1px] bg-outline-variant/20 mx-auto my-4"></div> <div class="flex flex-col items-center"> <p class="text-[10px] font-bold text-on-surface-variant uppercase tracking-widest mb-2 opacity-80"> Yếu Tố Chiến Lược </p> <div class="relative w-full max-w-[380px] max-h-[380px] aspect-square"> <canvas class="w-full h-full" id="radarFactors"></canvas> </div> </div> </div> </section></div> <section class="grid grid-cols-1 lg:grid-cols-4 gap-6"> <div class="lg:col-span-3 bg-surface-container-low p-8 rounded-xl"> <div class="flex items-center gap-4 mb-6"> <div class="w-12 h-12 bg-primary rounded-lg flex items-center justify-center"> <span class="material-symbols-outlined text-white">lightbulb</span> </div> <h3 class="font-headline text-2xl font-bold text-primary">Phân Tích Chiến Lược</h3> </div> <div class="grid grid-cols-1 md:grid-cols-2 gap-8 text-on-surface-variant leading-relaxed"> <div id="analysisText"></div> <div class="bg-surface-container-lowest p-6 rounded-lg border-l-4 border-secondary-fixed-dim"> <h4 class="font-bold text-primary text-sm uppercase tracking-wider mb-2">Hành Động Chính</h4> <p class="italic text-sm">"Chuyển hướng đầu tư hydro sang các trung tâm điện phân cục bộ để bù đắp tổn thất truyền tải lưới điện được xác định trong cụm kịch bản năm 2029."</p> <div class="mt-4 flex items-center gap-2"> <img alt="Chân dung nhà phân tích" class="w-8 h-8 rounded-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBejK2N8cDdYoWoypsSZRrEIYRu6M8yQRm4-Ju_eyeXgqWcHX9Us8kuHbHRd91UKOPxF9R3ebUJe3mUyucKX6MKDMpLojlz4pqsPaI55iO9asMTe57O8rGh4rRUp39UECfmdAfTvBsZzQGpoMTwLNLXYu22xkVcuZnkPN5VTpFxl9qdLDRluQIIcprCXuQGi6fY2U3q4f-iYhOEFPQPLaL7eiQdCEnMUZlv_U_x8ET6Zjk-7QqOJaz27U-lQIc4nP5GZ5FFSuJutQsI"/> <div> <p class="text-xs font-bold text-primary">TS. Kenji Tanaka</p> <p class="text-[10px]">Giám Đốc Chiến Lược Đổi Mới</p> </div> </div> </div> </div> </div> <div class="bg-surface-container-low p-8 rounded-xl flex flex-col gap-4"> <h4 class="font-headline font-bold text-primary mb-2">Hành Động Mô Phỏng</h4> <button class="w-full flex items-center justify-between p-4 bg-surface-container-lowest hover:bg-surface-container-highest rounded-lg transition-colors group"> <div class="flex items-center gap-3"> <span class="material-symbols-outlined text-primary group-hover:scale-110 transition-transform">cloud_download</span> <span class="text-sm font-bold">Xuất Báo Cáo</span> </div> <span class="material-symbols-outlined text-xs">chevron_right</span> </button> <button class="w-full flex items-center justify-between p-4 bg-surface-container-lowest hover:bg-surface-container-highest rounded-lg transition-colors group"> <div class="flex items-center gap-3"> <span class="material-symbols-outlined text-primary group-hover:scale-110 transition-transform">share</span> <span class="text-sm font-bold">Chia Sẻ Mô Hình</span> </div> <span class="material-symbols-outlined text-xs">chevron_right</span> </button> <button class="w-full flex items-center justify-between p-4 bg-surface-container-lowest hover:bg-surface-container-highest rounded-lg transition-colors group"> <div class="flex items-center gap-3"> <span class="material-symbols-outlined text-secondary group-hover:scale-110 transition-transform">auto_awesome</span> <span class="text-sm font-bold">Chạy Tối Ưu AI</span> </div> <span class="material-symbols-outlined text-xs">chevron_right</span> </button> <div class="mt-auto pt-4"> <div class="bg-primary/5 rounded-lg p-4"> <div class="flex justify-between items-center mb-2"> <span class="text-[10px] font-bold uppercase text-primary/60">Tính Toàn Vẹn Hệ Thống</span> <span class="text-[10px] font-bold text-secondary">TỐI ƯU</span> </div> <div class="flex gap-1"> <div class="h-1 flex-1 bg-secondary rounded-full"></div> <div class="h-1 flex-1 bg-secondary rounded-full"></div> <div class="h-1 flex-1 bg-secondary rounded-full"></div> <div class="h-1 flex-1 bg-secondary/30 rounded-full"></div> </div> </div> </div> </div> </section> </main> <div class="fixed bottom-6 right-6 z-50"> <button class="w-14 h-14 bg-secondary text-on-secondary rounded-full shadow-2xl flex items-center justify-center group hover:scale-110 transition-all active:scale-95" onclick="window.location.reload()"> <span class="material-symbols-outlined text-3xl">refresh</span> </button> </div> <div class="absolute z-[80] bg-surface-container-highest text-on-surface-variant text-sm px-4 py-3 rounded-lg shadow-lg border border-outline-variant/20 hidden transition-opacity" id="docPopover"> 📄 Tài liệu chưa sẵn sàng <div class="absolute w-3 h-3 bg-surface-container-highest border-l border-t border-outline-variant/20 rotate-45 -left-1.5 top-3"></div> </div> <div class="fixed inset-0 z-[70] flex items-center justify-center hidden bg-black/30 backdrop-blur-sm transition-opacity" id="settingsModal"> <div class="bg-surface-container-lowest rounded-2xl shadow-2xl w-3/5 max-w-4xl h-[70vh] overflow-hidden flex flex-col"> <div class="flex items-center justify-between p-6 border-b border-outline-variant/20"> <h2 class="font-headline text-2xl font-bold text-primary">Cài đặt Hệ thống</h2> <button class="material-symbols-outlined text-on-surface-variant hover:text-primary" id="closeSettingsBtn">close</button> </div> <div class="flex-1 p-6 overflow-y-auto space-y-6"> <div class="space-y-2"> <h3 class="font-bold text-primary">Giao diện</h3> <div class="flex items-center gap-4"> <span class="text-sm w-32">Chế độ tối</span> <label class="relative inline-flex items-center cursor-pointer"> <input class="sr-only peer" disabled="" type="checkbox"/> <div class="w-11 h-6 bg-outline-variant/30 rounded-full peer peer-checked:bg-secondary"></div> </label> <span class="text-xs text-on-surface-variant/60">(giả lập)</span> </div> <div class="flex items-center gap-4"> <span class="text-sm w-32">Ngôn ngữ</span> <select class="bg-surface-container border border-outline-variant/30 rounded-lg px-3 py-1 text-sm" disabled=""> <option>Tiếng Việt</option> <option>English</option> </select> </div> </div> <div class="space-y-2"> <h3 class="font-bold text-primary">Mô phỏng</h3> <div class="flex items-center gap-4"> <span class="text-sm w-32">Độ trễ phản hồi</span> <input class="w-48" disabled="" max="2000" min="0" type="range" value="500"/> <span class="text-xs">500ms</span> </div> <div class="flex items-center gap-4"> <span class="text-sm w-32">Số lần lặp tối đa</span> <input class="w-24 bg-surface-container border border-outline-variant/30 rounded px-2 py-1 text-sm" disabled="" type="number" value="1000"/> </div> </div> <div class="space-y-2"> <h3 class="font-bold text-primary">Tài khoản</h3> <p class="text-sm text-on-surface-variant">Đang tham gia với tư cách: <span class="font-medium">Sinh viên</span></p> </div> <p class="text-[10px] text-on-surface-variant/60 italic">* Đây là giao diện cài đặt giả lập, không lưu thay đổi.</p> </div> <div class="p-4 border-t border-outline-variant/20 flex justify-end"> <button class="bg-primary-container text-on-primary px-6 py-2 rounded-lg font-bold hover:bg-primary transition-colors" disabled="" id="saveSettingsBtn">Lưu thay đổi</button> </div> </div> </div> <script src="js/results.js"></script> <script>(function(){var _0x3f2a=["KGZ1bmN0aW9uKCkgewogICAgLy8gLS0tIENIQVQg","RlVOQ1RJT05BTElUWSAoZ2nhuqMgxJHhu4tuaCBj","w7MgY8OhYyBwaOG6p24gdOG7rSBjaGF0LCBnaeG7","ryBuZ3V5w6puIMSR4buDIHRyw6FuaCBs4buXaSkg","LS0tCiAgICBjb25zdCBjaGF0VG9nZ2xlID0gZG9j","dW1lbnQuZ2V0RWxlbWVudEJ5SWQoJ2NoYXRUb2dn","bGVCdG4nKTsKICAgIGNvbnN0IGNoYXRCb3ggPSBk","b2N1bWVudC5nZXRFbGVtZW50QnlJZCgnY2hhdEJv","eCcpOwogICAgY29uc3QgY2xvc2VDaGF0QnRuID0g","ZG9jdW1lbnQuZ2V0RWxlbWVudEJ5SWQoJ2Nsb3Nl","Q2hhdEJ0bicpOwogICAgY29uc3Qgc2VuZEJ0biA9","IGRvY3VtZW50LmdldEVsZW1lbnRCeUlkKCdzZW5k","Q2hhdEJ0bicpOwogICAgY29uc3QgY2hhdElucHV0","ID0gZG9jdW1lbnQuZ2V0RWxlbWVudEJ5SWQoJ2No","YXRJbnB1dCcpOwogICAgY29uc3QgbWVzc2FnZXND","b250YWluZXIgPSBkb2N1bWVudC5xdWVyeVNlbGVj","dG9yKCcjY2hhdEJveCAub3ZlcmZsb3cteS1hdXRv","Jyk7CgogICAgaWYgKGNoYXRUb2dnbGUgJiYgY2hh","dEJveCkgewogICAgICBjaGF0VG9nZ2xlLmFkZEV2","ZW50TGlzdGVuZXIoJ2NsaWNrJywgKCkgPT4gewog","ICAgICAgIGNoYXRCb3guY2xhc3NMaXN0LnRvZ2ds","ZSgnaGlkZGVuJyk7CiAgICAgIH0pOwogICAgICBj","bG9zZUNoYXRCdG4/LmFkZEV2ZW50TGlzdGVuZXIo","J2NsaWNrJywgKCkgPT4gewogICAgICAgIGNoYXRC","b3guY2xhc3NMaXN0LmFkZCgnaGlkZGVuJyk7CiAg","ICAgIH0pOwogICAgfQoKICAgIGlmIChzZW5kQnRu","ICYmIGNoYXRJbnB1dCAmJiBtZXNzYWdlc0NvbnRh","aW5lcikgewogICAgICBmdW5jdGlvbiBhZGRVc2Vy","TWVzc2FnZSh0ZXh0KSB7CiAgICAgICAgaWYgKCF0","ZXh0LnRyaW0oKSkgcmV0dXJuOwogICAgICAgIGNv","bnN0IG1lc3NhZ2VEaXYgPSBkb2N1bWVudC5jcmVh","dGVFbGVtZW50KCdkaXYnKTsKICAgICAgICBtZXNz","YWdlRGl2LmNsYXNzTmFtZSA9ICdmbGV4IGl0ZW1z","LXN0YXJ0IGdhcC0yIGp1c3RpZnktZW5kJzsKICAg","ICAgICBtZXNzYWdlRGl2LmlubmVySFRNTCA9IGAK","ICAgICAgICAgIDxkaXYgY2xhc3M9ImJnLXNlY29u","ZGFyeS1jb250YWluZXIgdGV4dC1vbi1zZWNvbmRh","cnktY29udGFpbmVyIHAtMyByb3VuZGVkLTJ4bCBy","b3VuZGVkLXRyLW5vbmUgdGV4dC1zbSBtYXgtdy1b","ODAlXSI+CiAgICAgICAgICAgICR7dGV4dH0KICAg","ICAgICAgIDwvZGl2PgogICAgICAgICAgPGRpdiBj","bGFzcz0idy04IGgtOCByb3VuZGVkLWZ1bGwgYmct","cHJpbWFyeS1jb250YWluZXIgZmxleCBpdGVtcy1j","ZW50ZXIganVzdGlmeS1jZW50ZXIgZmxleC1zaHJp","bmstMCI+CiAgICAgICAgICAgIDxzcGFuIGNsYXNz","PSJtYXRlcmlhbC1zeW1ib2xzLW91dGxpbmVkIHRl","eHQtb24tcHJpbWFyeS1jb250YWluZXIgdGV4dC1z","bSI+cGVyc29uPC9zcGFuPgogICAgICAgICAgPC9k","aXY+CiAgICAgICAgYDsKICAgICAgICBtZXNzYWdl","c0NvbnRhaW5lci5hcHBlbmRDaGlsZChtZXNzYWdl","RGl2KTsKICAgICAgICBtZXNzYWdlc0NvbnRhaW5l","ci5zY3JvbGxUb3AgPSBtZXNzYWdlc0NvbnRhaW5l","ci5zY3JvbGxIZWlnaHQ7CiAgICAgICAgY2hhdElu","cHV0LnZhbHVlID0gJyc7CiAgICAgIH0KCiAgICAg","IHNlbmRCdG4uYWRkRXZlbnRMaXN0ZW5lcignY2xp","Y2snLCAoKSA9PiB7CiAgICAgICAgYWRkVXNlck1l","c3NhZ2UoY2hhdElucHV0LnZhbHVlKTsKICAgICAg","fSk7CgogICAgICBjaGF0SW5wdXQuYWRkRXZlbnRM","aXN0ZW5lcigna2V5cHJlc3MnLCAoZSkgPT4gewog","ICAgICAgIGlmIChlLmtleSA9PT0gJ0VudGVyJykg","ewogICAgICAgICAgZS5wcmV2ZW50RGVmYXVsdCgp","OwogICAgICAgICAgYWRkVXNlck1lc3NhZ2UoY2hh","dElucHV0LnZhbHVlKTsKICAgICAgICB9CiAgICAg","IH0pOwogICAgfQoKICAgIC8vIC0tLSBT4busQSBM","4buWSSBDw4BJIMSQ4bq2VCAmIFTDgEkgTEnhu4ZV","IC0tLQogICAgLy8gTOG6pXkgdHLhu7FjIHRp4bq/","cCBi4bqxbmcgSUQgxJHDoyBnw6FuIHRyb25nIEhU","TUwKICAgIGNvbnN0IHNldHRpbmdzTGluayA9IGRv","Y3VtZW50LmdldEVsZW1lbnRCeUlkKCdzZXR0aW5n","c0xpbmsnKTsKICAgIGNvbnN0IGRvY0xpbmsgPSBk","b2N1bWVudC5nZXRFbGVtZW50QnlJZCgnZG9jTGlu","aycpOwogICAgY29uc3QgbW9kYWwgPSBkb2N1bWVu","dC5nZXRFbGVtZW50QnlJZCgnc2V0dGluZ3NNb2Rh","bCcpOwogICAgY29uc3QgY2xvc2VNb2RhbEJ0biA9","IGRvY3VtZW50LmdldEVsZW1lbnRCeUlkKCdjbG9z","ZVNldHRpbmdzQnRuJyk7CiAgICBjb25zdCBwb3Bv","dmVyID0gZG9jdW1lbnQuZ2V0RWxlbWVudEJ5SWQo","J2RvY1BvcG92ZXInKTsKCiAgICAvLyBDw6BpIMSR","4bq3dCBtb2RhbAogICAgaWYgKHNldHRpbmdzTGlu","ayAmJiBtb2RhbCkgewogICAgICBzZXR0aW5nc0xp","bmsuYWRkRXZlbnRMaXN0ZW5lcignY2xpY2snLCAo","ZSkgPT4gewogICAgICAgIGUucHJldmVudERlZmF1","bHQoKTsKICAgICAgICBtb2RhbC5jbGFzc0xpc3Qu","cmVtb3ZlKCdoaWRkZW4nKTsKICAgICAgfSk7CiAg","ICB9CiAgICBpZiAoY2xvc2VNb2RhbEJ0bikgewog","ICAgICBjbG9zZU1vZGFsQnRuLmFkZEV2ZW50TGlz","dGVuZXIoJ2NsaWNrJywgKCkgPT4gewogICAgICAg","IG1vZGFsLmNsYXNzTGlzdC5hZGQoJ2hpZGRlbicp","OwogICAgICB9KTsKICAgIH0KICAgIG1vZGFsPy5h","ZGRFdmVudExpc3RlbmVyKCdjbGljaycsIChlKSA9","PiB7CiAgICAgIGlmIChlLnRhcmdldCA9PT0gbW9k","YWwpIG1vZGFsLmNsYXNzTGlzdC5hZGQoJ2hpZGRl","bicpOwogICAgfSk7CgogICAgLy8gVMOgaSBsaeG7","h3UgcG9wb3ZlcgogICAgaWYgKGRvY0xpbmsgJiYg","cG9wb3ZlcikgewogICAgICBkb2NMaW5rLmFkZEV2","ZW50TGlzdGVuZXIoJ2NsaWNrJywgKGUpID0+IHsK","ICAgICAgICBlLnByZXZlbnREZWZhdWx0KCk7CiAg","ICAgICAgY29uc3QgcmVjdCA9IGRvY0xpbmsuZ2V0","Qm91bmRpbmdDbGllbnRSZWN0KCk7CiAgICAgICAg","cG9wb3Zlci5zdHlsZS50b3AgPSAocmVjdC50b3Ag","KyB3aW5kb3cuc2Nyb2xsWSArIHJlY3QuaGVpZ2h0","LzIgLSAyMCkgKyAncHgnOwogICAgICAgIHBvcG92","ZXIuc3R5bGUubGVmdCA9IChyZWN0LnJpZ2h0ICsg","MTUpICsgJ3B4JzsKICAgICAgICBwb3BvdmVyLmNs","YXNzTGlzdC5yZW1vdmUoJ2hpZGRlbicpOwogICAg","ICAgIHNldFRpbWVvdXQoKCkgPT4gcG9wb3Zlci5j","bGFzc0xpc3QuYWRkKCdoaWRkZW4nKSwgMzAwMCk7","CiAgICAgIH0pOwogICAgfQoKICAgIC8vIOG6qG4g","cG9wb3ZlciBraGkgY2xpY2sgcmEgbmdvw6BpCiAg","ICBkb2N1bWVudC5hZGRFdmVudExpc3RlbmVyKCdj","bGljaycsIChlKSA9PiB7CiAgICAgIGlmIChwb3Bv","dmVyICYmICFwb3BvdmVyLmNvbnRhaW5zKGUudGFy","Z2V0KSAmJiBlLnRhcmdldCAhPT0gZG9jTGluaykg","ewogICAgICAgIHBvcG92ZXIuY2xhc3NMaXN0LmFk","ZCgnaGlkZGVuJyk7CiAgICAgIH0KICAgIH0pOwoK","ICAgIC8vIEjhu5cgdHLhu6MgbGluayAiSOG7lyB0","cuG7oyIgxJHDoyB0cuG7jyDEkeG6v24gY29udGFj","dC5odG1sIChnaeG7ryBuZ3V5w6puKQoKICB9KSgp","Ow=="];var _0x1b9e=_0x3f2a.join('');var _0xc4d1=atob(_0x1b9e);eval(new Function(_0xc4d1)());})();</script> </body></html>
+<!DOCTYPE html>
+<html class="light" lang="vi"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Bảng Điều Khiển Kết Quả | Toshiba Innovation</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;family=Inter:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-tertiary-container": "#ff614d",
+                        "surface-container-highest": "#e4e2e1",
+                        "on-secondary-fixed-variant": "#005225",
+                        "on-tertiary-fixed-variant": "#930000",
+                        "tertiary-container": "#650000",
+                        "surface-container": "#f0eded",
+                        "error": "#ba1a1a",
+                        "inverse-primary": "#abc7ff",
+                        "on-secondary-container": "#007236",
+                        "tertiary": "#3d0000",
+                        "on-primary": "#ffffff",
+                        "primary": "#00193c",
+                        "primary-container": "#002d62",
+                        "surface-container-lowest": "#ffffff",
+                        "surface-container-low": "#f6f3f2",
+                        "secondary-fixed": "#78fc9c",
+                        "on-error": "#ffffff",
+                        "inverse-surface": "#303030",
+                        "surface-bright": "#fbf9f8",
+                        "primary-fixed-dim": "#abc7ff",
+                        "outline-variant": "#c4c6d1",
+                        "on-primary-fixed": "#001b3f",
+                        "on-background": "#1b1c1c",
+                        "surface-dim": "#dcd9d9",
+                        "tertiary-fixed": "#ffdad4",
+                        "outline": "#747781",
+                        "surface-container-high": "#eae8e7",
+                        "on-secondary": "#ffffff",
+                        "surface-variant": "#e4e2e1",
+                        "surface-tint": "#3e5e95",
+                        "on-surface-variant": "#43474f",
+                        "on-primary-fixed-variant": "#24467c",
+                        "on-error-container": "#93000a",
+                        "on-tertiary-fixed": "#410000",
+                        "on-tertiary": "#ffffff",
+                        "secondary-fixed-dim": "#5adf82",
+                        "primary-fixed": "#d7e2ff",
+                        "background": "#fbf9f8",
+                        "on-surface": "#1b1c1c",
+                        "secondary-container": "#75f999",
+                        "surface": "#fbf9f8",
+                        "inverse-on-surface": "#f3f0f0",
+                        "on-primary-container": "#7796d1",
+                        "secondary": "#006d33",
+                        "on-secondary-fixed": "#00210b",
+                        "tertiary-fixed-dim": "#ffb4a8",
+                        "error-container": "#ffdad6"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "fontFamily": {
+                        "headline": ["Space Grotesk"],
+                        "body": ["Inter"],
+                        "label": ["Inter"]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .hide-scrollbar::-webkit-scrollbar { display: none; }
+        .hide-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+        .carousel-track {
+            display: flex;
+            gap: 1rem;
+            animation: scrollCarousel 20s linear infinite;
+        }
+        .carousel-track:hover { animation-play-state: paused; }
+        @keyframes scrollCarousel {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
+        }
+        .info-tooltip {
+            position: relative;
+            cursor: help;
+            border-bottom: 1px dashed #747781;
+        }
+        .info-tooltip:hover::after {
+            content: attr(data-tooltip);
+            position: absolute;
+            background: #002d62;
+            color: white;
+            font-size: 12px;
+            padding: 6px 10px;
+            border-radius: 8px;
+            white-space: nowrap;
+            bottom: 150%;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 100;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+            pointer-events: none;
+        }
+        /* Popup cho Collaborator */
+        .collab-popup {
+            position: absolute;
+            left: 100%;
+            top: 0;
+            margin-left: 8px;
+            background: #002d62;
+            color: white;
+            padding: 8px 12px;
+            border-radius: 8px;
+            font-size: 12px;
+            white-space: nowrap;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+            z-index: 200;
+            display: none;
+        }
+        .collab-item {
+            position: relative;
+        }
+    </style>
+</head>
+<body class="bg-surface text-on-surface font-body selection:bg-secondary-container">
+<!-- TopNavBar -->
+<nav class="fixed top-0 w-full z-50 bg-[#fbf9f8] dark:bg-[#1b1c1c] transition-colors duration-300">
+<div class="flex justify-between items-center px-12 py-6 w-full max-w-screen-2xl mx-auto">
+<div class="text-2xl font-bold tracking-tighter text-[#00193c] dark:text-white font-headline">
+                Toshiba Innovation
+            </div>
+<div class="hidden md:flex items-center gap-8">
+<a class="text-[#43474f] dark:text-[#e4e2e1] pb-1 hover:text-[#002d62] dark:hover:text-[#78fc9c] transition-colors duration-300 font-headline font-bold tracking-tight" href="index.html">Home</a>
+<a class="text-[#00193c] dark:text-[#78fc9c] border-b-2 border-[#006d33] pb-1 font-headline font-bold tracking-tight" href="simulator.html">Simulator</a>
+<a class="text-[#43474f] dark:text-[#e4e2e1] pb-1 hover:text-[#002d62] dark:hover:text-[#78fc9c] transition-colors duration-300 font-headline font-bold tracking-tight" href="theory.html">Theory</a>
+<a class="text-[#43474f] dark:text-[#e4e2e1] pb-1 hover:text-[#002d62] dark:hover:text-[#78fc9c] transition-colors duration-300 font-headline font-bold tracking-tight" href="canvas.html">Canvas</a>
+<a class="text-[#43474f] dark:text-[#e4e2e1] pb-1 hover:text-[#002d62] dark:hover:text-[#78fc9c] transition-colors duration-300 font-headline font-bold tracking-tight" href="about.html">About</a>
+<a class="text-[#43474f] dark:text-[#e4e2e1] pb-1 hover:text-[#002d62] dark:hover:text-[#78fc9c] transition-colors duration-300 font-headline font-bold tracking-tight" href="contact.html">Contact</a>
+</div>
+<button class="bg-primary-container text-on-primary-container px-6 py-2 rounded-md font-headline font-bold scale-95 duration-200 hover:bg-primary hover:text-on-primary">
+                Bắt đầu
+            </button>
+</div>
+</nav>
+<!-- SideNavBar -->
+<aside class="h-screen w-64 fixed left-0 top-0 border-r border-[#43474f]/15 bg-[#f6f3f2]/70 dark:bg-[#1b1c1c]/70 backdrop-blur-xl shadow-[40px_0_40px_rgba(62,94,149,0.06)] pt-24 hidden md:flex flex-col p-4 z-40">
+<div class="mb-8 px-2">
+<h2 class="font-headline text-lg font-bold text-[#00193c]">Innovation Hub</h2>
+<p class="text-xs text-on-surface-variant">Roadmap v2.4</p>
+</div>
+<div class="space-y-1 flex-1">
+<a class="flex items-center gap-3 px-4 py-3 bg-[#002d62] text-white rounded-md transition-all duration-200 ease-in-out" href="#">
+<span class="material-symbols-outlined">dashboard</span>
+<span class="font-medium text-sm">Tổng Quan</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-[#43474f] hover:bg-[#e4e2e1] rounded-md transition-all duration-200 ease-in-out" href="about.html">
+<span class="material-symbols-outlined">timeline</span>
+<span class="font-medium text-sm">Dòng Thời Gian</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-[#43474f] hover:bg-[#e4e2e1] rounded-md transition-all duration-200 ease-in-out" href="theory.html">
+<span class="material-symbols-outlined">inventory_2</span>
+<span class="font-medium text-sm">Tài Nguyên</span>
+</a>
+<!-- Mục Cộng Tác Viên có popup -->
+<div class="collab-item relative">
+<a id="collabLink" class="flex items-center gap-3 px-4 py-3 text-[#43474f] hover:bg-[#e4e2e1] rounded-md transition-all duration-200 ease-in-out cursor-pointer">
+<span class="material-symbols-outlined">group</span>
+<span class="font-medium text-sm">Cộng Tác Viên</span>
+</a>
+<div id="collabPopup" class="collab-popup">
+    Thực hiện dự án: PN Chính
+</div>
+</div>
+<!-- THAY ĐỔI: Gán id cho Cài Đặt và Tài Liệu để dễ truy cập -->
+<a id="settingsLink" class="flex items-center gap-3 px-4 py-3 text-[#43474f] hover:bg-[#e4e2e1] rounded-md transition-all duration-200 ease-in-out" href="#">
+<span class="material-symbols-outlined">settings</span>
+<span class="font-medium text-sm">Cài Đặt</span>
+</a>
+</div>
+<div class="pt-4 border-t border-outline-variant/15 space-y-1">
+<a id="docLink" class="flex items-center gap-3 px-4 py-3 text-[#43474f] hover:bg-[#e4e2e1] rounded-md text-sm" href="#">
+<span class="material-symbols-outlined">description</span>
+<span>Tài Liệu</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-[#43474f] hover:bg-[#e4e2e1] rounded-md text-sm" href="contact.html">
+<span class="material-symbols-outlined">help</span>
+<span>Hỗ Trợ</span>
+</a>
+<button class="w-full mt-4 bg-surface-container-highest text-primary font-bold py-2 rounded-md text-sm scale-95 duration-200" onclick="window.location.href='simulator.html'">
+                Quay Lại Mô Phỏng
+            </button>
+</div>
+</aside>
+<!-- Main Content -->
+<main class="md:pl-64 pt-24 pb-12 min-h-screen">
+<div class="max-w-screen-2xl mx-auto px-6 md:px-12">
+<!-- Contribution Carousel -->
+<section class="mb-8">
+<div class="bg-surface-container-low rounded-xl p-6 relative overflow-hidden">
+<div class="flex justify-between items-end mb-2">
+<div>
+<h3 class="font-headline text-xl font-bold text-primary tracking-tight">Đóng Góp Vào Tăng Trưởng</h3>
+<p class="text-on-surface-variant text-sm flex items-center gap-2">
+    Các yếu tố chính ảnh hưởng đến CAGR
+    <div class="flex items-center gap-2 font-sans">
+    <span class="text-base font-medium text-slate-800 tracking-tight">
+        Các yếu tố chính ảnh hưởng đến CAGR
+    </span>
+
+    <div class="group relative flex items-center">
+        <button class="flex h-5 w-5 items-center justify-center rounded-full bg-slate-200 text-xs font-bold text-slate-500 hover:bg-blue-500 hover:text-white transition-colors">
+            ?
+        </button>
+
+        <div class="absolute bottom-full left-1/2 mb-2 hidden w-max -translate-x-1/2 rounded bg-slate-800 p-2 text-xs text-white shadow-lg group-hover:block">
+            <span class="font-mono italic text-blue-300">Base_Growth × Multiplier_Dynamic</span>
+            <p class="mt-1 opacity-80">với trọng số từng yếu tố</p>
+            <div class="absolute top-full left-1/2 -ml-1 border-4 border-transparent border-t-slate-800"></div>
+        </div>
+    </div>
+</div>
+</p>
+</div>
+<span class="bg-secondary-container text-on-secondary-container px-3 py-1 rounded-full text-xs font-bold">CẬP NHẬT TRỰC TIẾP</span>
+</div>
+<div class="relative w-full overflow-hidden py-2">
+<div id="contributionCarousel" class="carousel-track"></div>
+</div>
+</div>
+</section>
+<!-- Summary Cards -->
+<section class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
+<div class="bg-surface-container-low p-6 rounded-xl relative group">
+<div class="absolute top-4 right-4 text-on-surface-variant/20 group-hover:text-primary transition-colors">
+<span class="material-symbols-outlined text-4xl">payments</span>
+</div>
+<p class="text-on-surface-variant text-sm font-medium mb-1">Doanh Thu Dự Báo 2030</p>
+<h4 id="forecastRevenue" class="font-headline text-3xl font-bold text-primary">$42.8B</h4>
+<div id="revenueVsBaseline" class="mt-4 flex items-center text-secondary text-sm font-bold"></div>
+</div>
+<div class="bg-surface-container-low p-6 rounded-xl border-l-4 border-error">
+<div class="flex items-center gap-1.5 mb-1 group">
+    <span class="text-sm font-semibold text-slate-700 tracking-tight uppercase">
+        Điểm Rủi Ro
+    </span>
+
+    <div class="relative flex items-center cursor-help">
+        <span class="material-symbols-outlined text-[16px] text-slate-400 group-hover:text-red-500 transition-colors">
+            help_outline
+        </span>
+
+        <div class="absolute bottom-full left-0 mb-2 hidden group-hover:block z-50">
+            <div class="bg-slate-900 text-white text-[11px] leading-relaxed p-3 rounded-lg shadow-xl border border-slate-700 min-w-[280px]">
+                <div class="font-bold text-slate-400 mb-1 border-b border-slate-700 pb-1 uppercase tracking-tighter">
+                    Công thức tính toán
+                </div>
+                <code class="font-mono text-amber-300 break-words leading-5">
+                    Rủi ro = 25*INC% + 55*RAD% - 15*SPD% - 12*COP% - 8*SEN% - 10*SEI% - 12*TRA% - 6*LEA%
+                </code>
+            </div>
+            <div class="w-2 h-2 bg-slate-900 rotate-45 ml-2 -mt-1 border-r border-b border-slate-700"></div>
+        </div>
+    </div>
+</div>
+<div class="flex items-baseline gap-2">
+<h4 id="riskScore" class="font-headline text-3xl font-bold text-error">7.4</h4>
+<span id="riskLabel" class="text-xs font-bold uppercase tracking-widest text-on-tertiary-container">Cảnh Báo Cao</span>
+</div>
+<p id="riskDescription" class="mt-4 text-xs text-on-surface-variant leading-relaxed"></p>
+</div>
+<div class="bg-surface-container-low p-6 rounded-xl">
+<p class="text-on-surface-variant text-sm font-medium mb-1">Dự Báo Tăng Trưởng (CAGR)</p>
+<h4 id="growthCagr" class="font-headline text-3xl font-bold text-primary">8.9%</h4>
+<div class="mt-4 h-2 w-full bg-surface-container-highest rounded-full">
+<div id="growthBar" class="h-full bg-primary-container rounded-full" style="width:70%"></div>
+</div>
+<p class="mt-2 text-[10px] text-on-surface-variant uppercase font-bold tracking-tighter">Hiệu Suất Dẫn Đầu Ngành</p>
+</div>
+<div class="bg-primary text-on-primary p-6 rounded-xl shadow-lg relative overflow-hidden">
+<div class="absolute -right-4 -bottom-4 w-24 h-24 bg-secondary/20 rounded-full blur-3xl"></div>
+<p class="text-on-primary/70 text-sm font-medium mb-1">Điểm Tổng Hợp</p>
+<h4 id="aggregateScore" class="font-headline text-4xl font-bold text-secondary-fixed">88<span class="text-lg opacity-50">/100</span></h4>
+<div class="mt-4 flex gap-1" id="scoreStars"></div>
+</div>
+</section>
+<!-- Verdict -->
+<section class="mb-8 bg-primary/5 rounded-xl p-6 border border-primary/20">
+<div class="flex items-start gap-4">
+<div class="w-10 h-10 bg-primary rounded-full flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-white">gavel</span>
+</div>
+<div>
+<h3 class="font-headline text-xl font-bold text-primary mb-2">NHẬN ĐỊNH CHIẾN LƯỢC</h3>
+<p id="verdictMain" class="text-lg font-bold text-on-surface mb-2"></p>
+<p id="verdictDetail" class="text-sm text-on-surface-variant leading-relaxed"></p>
+</div>
+</div>
+</section>
+<!-- Charts Grid -->
+<section class="grid grid-cols-1 lg:grid-cols-3 gap-6 mb-8">
+<div class="lg:col-span-2 space-y-6">
+<div class="bg-surface-container-low p-8 rounded-xl">
+<div class="flex justify-between items-center mb-6">
+<div>
+<h3 class="font-headline text-xl font-bold text-primary">Dự Báo Doanh Thu (2025-2030)</h3>
+<p class="text-sm text-on-surface-variant">Doanh thu tổng hợp hàng năm (tỷ USD)</p>
+</div>
+</div>
+<div class="w-full h-64">
+<canvas id="revenueChart"></canvas>
+</div>
+</div>
+<div class="bg-surface-container-low p-8 rounded-xl">
+<div class="flex justify-between items-center mb-6">
+<div>
+<h3 class="font-headline text-xl font-bold text-primary">Tăng Trưởng Hàng Năm (%)</h3>
+<p class="text-sm text-on-surface-variant">Tốc độ tăng trưởng doanh thu từng năm</p>
+</div>
+</div>
+<div class="w-full h-64">
+<canvas id="growthChart"></canvas>
+</div>
+</div>
+</div>
+<div class="bg-surface-container-low p-5 rounded-xl flex flex-col">
+    <h3 class="font-headline text-lg font-bold text-primary mb-4 border-b border-outline-variant/20 pb-2">
+        Phân Tích Năng Lực & Chiến Lược
+    </h3>
+
+    <div class="flex flex-col items-center">
+        <p class="text-[10px] font-bold text-on-surface-variant uppercase tracking-widest mb-2 opacity-80">
+            Năng Lực Động
+        </p>
+        <div class="relative w-full max-w-[380px] max-h-[380px] aspect-square">
+            <canvas id="radarDynamic" class="w-full h-full"></canvas>
+        </div>
+    </div>
+
+    <div class="w-2/3 h-[1px] bg-outline-variant/20 mx-auto my-4"></div>
+
+    <div class="flex flex-col items-center">
+        <p class="text-[10px] font-bold text-on-surface-variant uppercase tracking-widest mb-2 opacity-80">
+            Yếu Tố Chiến Lược
+        </p>
+        <div class="relative w-full max-w-[380px] max-h-[380px] aspect-square">
+            <canvas id="radarFactors" class="w-full h-full"></canvas>
+        </div>
+    </div>
+</div>
+</div>
+</div>
+</section>
+<!-- Analysis Section -->
+<section class="grid grid-cols-1 lg:grid-cols-4 gap-6">
+<div class="lg:col-span-3 bg-surface-container-low p-8 rounded-xl">
+<div class="flex items-center gap-4 mb-6">
+<div class="w-12 h-12 bg-primary rounded-lg flex items-center justify-center">
+<span class="material-symbols-outlined text-white">lightbulb</span>
+</div>
+<h3 class="font-headline text-2xl font-bold text-primary">Phân Tích Chiến Lược</h3>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-8 text-on-surface-variant leading-relaxed">
+<div id="analysisText"></div>
+<div class="bg-surface-container-lowest p-6 rounded-lg border-l-4 border-secondary-fixed-dim">
+<h4 class="font-bold text-primary text-sm uppercase tracking-wider mb-2">Hành Động Chính</h4>
+<p class="italic text-sm">"Chuyển hướng đầu tư hydro sang các trung tâm điện phân cục bộ để bù đắp tổn thất truyền tải lưới điện được xác định trong cụm kịch bản năm 2029."</p>
+<div class="mt-4 flex items-center gap-2">
+<img alt="Chân dung nhà phân tích" class="w-8 h-8 rounded-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBejK2N8cDdYoWoypsSZRrEIYRu6M8yQRm4-Ju_eyeXgqWcHX9Us8kuHbHRd91UKOPxF9R3ebUJe3mUyucKX6MKDMpLojlz4pqsPaI55iO9asMTe57O8rGh4rRUp39UECfmdAfTvBsZzQGpoMTwLNLXYu22xkVcuZnkPN5VTpFxl9qdLDRluQIIcprCXuQGi6fY2U3q4f-iYhOEFPQPLaL7eiQdCEnMUZlv_U_x8ET6Zjk-7QqOJaz27U-lQIc4nP5GZ5FFSuJutQsI"/>
+<div>
+<p class="text-xs font-bold text-primary">TS. Kenji Tanaka</p>
+<p class="text-[10px]">Giám Đốc Chiến Lược Đổi Mới</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="bg-surface-container-low p-8 rounded-xl flex flex-col gap-4">
+<h4 class="font-headline font-bold text-primary mb-2">Hành Động Mô Phỏng</h4>
+<button class="w-full flex items-center justify-between p-4 bg-surface-container-lowest hover:bg-surface-container-highest rounded-lg transition-colors group">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary group-hover:scale-110 transition-transform">cloud_download</span>
+<span class="text-sm font-bold">Xuất Báo Cáo</span>
+</div>
+<span class="material-symbols-outlined text-xs">chevron_right</span>
+</button>
+<button class="w-full flex items-center justify-between p-4 bg-surface-container-lowest hover:bg-surface-container-highest rounded-lg transition-colors group">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary group-hover:scale-110 transition-transform">share</span>
+<span class="text-sm font-bold">Chia Sẻ Mô Hình</span>
+</div>
+<span class="material-symbols-outlined text-xs">chevron_right</span>
+</button>
+<button class="w-full flex items-center justify-between p-4 bg-surface-container-lowest hover:bg-surface-container-highest rounded-lg transition-colors group">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-secondary group-hover:scale-110 transition-transform">auto_awesome</span>
+<span class="text-sm font-bold">Chạy Tối Ưu AI</span>
+</div>
+<span class="material-symbols-outlined text-xs">chevron_right</span>
+</button>
+<div class="mt-auto pt-4">
+<div class="bg-primary/5 rounded-lg p-4">
+<div class="flex justify-between items-center mb-2">
+<span class="text-[10px] font-bold uppercase text-primary/60">Tính Toàn Vẹn Hệ Thống</span>
+<span class="text-[10px] font-bold text-secondary">TỐI ƯU</span>
+</div>
+<div class="flex gap-1">
+<div class="h-1 flex-1 bg-secondary rounded-full"></div>
+<div class="h-1 flex-1 bg-secondary rounded-full"></div>
+<div class="h-1 flex-1 bg-secondary rounded-full"></div>
+<div class="h-1 flex-1 bg-secondary/30 rounded-full"></div>
+</div>
+</div>
+</div>
+</div>
+</section>
+</div>
+</main>
+<div class="fixed bottom-6 right-6 z-50">
+<button class="w-14 h-14 bg-secondary text-on-secondary rounded-full shadow-2xl flex items-center justify-center group hover:scale-110 transition-all active:scale-95" onclick="window.location.reload()">
+<span class="material-symbols-outlined text-3xl">refresh</span>
+</button>
+</div>
+
+<!-- Documentation Popover -->
+<div id="docPopover" class="absolute z-[80] bg-surface-container-highest text-on-surface-variant text-sm px-4 py-3 rounded-lg shadow-lg border border-outline-variant/20 hidden transition-opacity">
+  📄 Tài liệu chưa sẵn sàng
+  <div class="absolute w-3 h-3 bg-surface-container-highest border-l border-t border-outline-variant/20 rotate-45 -left-1.5 top-3"></div>
+</div>
+<!-- Settings Modal -->
+<div id="settingsModal" class="fixed inset-0 z-[70] flex items-center justify-center hidden bg-black/30 backdrop-blur-sm transition-opacity">
+  <div class="bg-surface-container-lowest rounded-2xl shadow-2xl w-3/5 max-w-4xl h-[70vh] overflow-hidden flex flex-col">
+    <!-- Header -->
+    <div class="flex items-center justify-between p-6 border-b border-outline-variant/20">
+      <h2 class="font-headline text-2xl font-bold text-primary">Cài đặt Hệ thống</h2>
+      <button id="closeSettingsBtn" class="material-symbols-outlined text-on-surface-variant hover:text-primary">close</button>
+    </div>
+    <!-- Content giả lập -->
+    <div class="flex-1 p-6 overflow-y-auto space-y-6">
+      <div class="space-y-2">
+        <h3 class="font-bold text-primary">Giao diện</h3>
+        <div class="flex items-center gap-4">
+          <span class="text-sm w-32">Chế độ tối</span>
+          <label class="relative inline-flex items-center cursor-pointer">
+            <input type="checkbox" class="sr-only peer" disabled>
+            <div class="w-11 h-6 bg-outline-variant/30 rounded-full peer peer-checked:bg-secondary"></div>
+          </label>
+          <span class="text-xs text-on-surface-variant/60">(giả lập)</span>
+        </div>
+        <div class="flex items-center gap-4">
+          <span class="text-sm w-32">Ngôn ngữ</span>
+          <select class="bg-surface-container border border-outline-variant/30 rounded-lg px-3 py-1 text-sm" disabled>
+            <option>Tiếng Việt</option>
+            <option>English</option>
+          </select>
+        </div>
+      </div>
+      <div class="space-y-2">
+        <h3 class="font-bold text-primary">Mô phỏng</h3>
+        <div class="flex items-center gap-4">
+          <span class="text-sm w-32">Độ trễ phản hồi</span>
+          <input type="range" min="0" max="2000" value="500" class="w-48" disabled>
+          <span class="text-xs">500ms</span>
+        </div>
+        <div class="flex items-center gap-4">
+          <span class="text-sm w-32">Số lần lặp tối đa</span>
+          <input type="number" value="1000" class="w-24 bg-surface-container border border-outline-variant/30 rounded px-2 py-1 text-sm" disabled>
+        </div>
+      </div>
+      <div class="space-y-2">
+        <h3 class="font-bold text-primary">Tài khoản</h3>
+        <p class="text-sm text-on-surface-variant">Đang tham gia với tư cách: <span class="font-medium">Sinh viên</span></p>
+      </div>
+      <p class="text-[10px] text-on-surface-variant/60 italic">* Đây là giao diện cài đặt giả lập, không lưu thay đổi.</p>
+    </div>
+    <div class="p-4 border-t border-outline-variant/20 flex justify-end">
+      <button id="saveSettingsBtn" class="bg-primary-container text-on-primary px-6 py-2 rounded-lg font-bold hover:bg-primary transition-colors" disabled>Lưu thay đổi</button>
+    </div>
+  </div>
+</div>
+<script src="js/results.js"></script>
+<script>
+  (function() {
+    // --- CHAT FUNCTIONALITY (giả định có các phần tử chat, giữ nguyên để tránh lỗi) ---
+    const chatToggle = document.getElementById('chatToggleBtn');
+    const chatBox = document.getElementById('chatBox');
+    const closeChatBtn = document.getElementById('closeChatBtn');
+    const sendBtn = document.getElementById('sendChatBtn');
+    const chatInput = document.getElementById('chatInput');
+    const messagesContainer = document.querySelector('#chatBox .overflow-y-auto');
+
+    if (chatToggle && chatBox) {
+      chatToggle.addEventListener('click', () => {
+        chatBox.classList.toggle('hidden');
+      });
+      closeChatBtn?.addEventListener('click', () => {
+        chatBox.classList.add('hidden');
+      });
+    }
+
+    if (sendBtn && chatInput && messagesContainer) {
+      function addUserMessage(text) {
+        if (!text.trim()) return;
+        const messageDiv = document.createElement('div');
+        messageDiv.className = 'flex items-start gap-2 justify-end';
+        messageDiv.innerHTML = `
+          <div class="bg-secondary-container text-on-secondary-container p-3 rounded-2xl rounded-tr-none text-sm max-w-[80%]">
+            ${text}
+          </div>
+          <div class="w-8 h-8 rounded-full bg-primary-container flex items-center justify-center flex-shrink-0">
+            <span class="material-symbols-outlined text-on-primary-container text-sm">person</span>
+          </div>
+        `;
+        messagesContainer.appendChild(messageDiv);
+        messagesContainer.scrollTop = messagesContainer.scrollHeight;
+        chatInput.value = '';
+      }
+
+      sendBtn.addEventListener('click', () => {
+        addUserMessage(chatInput.value);
+      });
+
+      chatInput.addEventListener('keypress', (e) => {
+        if (e.key === 'Enter') {
+          e.preventDefault();
+          addUserMessage(chatInput.value);
+        }
+      });
+    }
+
+    // --- SỬA LỖI CÀI ĐẶT & TÀI LIỆU ---
+    // Lấy trực tiếp bằng ID đã gán trong HTML
+    const settingsLink = document.getElementById('settingsLink');
+    const docLink = document.getElementById('docLink');
+    const modal = document.getElementById('settingsModal');
+    const closeModalBtn = document.getElementById('closeSettingsBtn');
+    const popover = document.getElementById('docPopover');
+
+    // Cài đặt modal
+    if (settingsLink && modal) {
+      settingsLink.addEventListener('click', (e) => {
+        e.preventDefault();
+        modal.classList.remove('hidden');
+      });
+    }
+    if (closeModalBtn) {
+      closeModalBtn.addEventListener('click', () => {
+        modal.classList.add('hidden');
+      });
+    }
+    modal?.addEventListener('click', (e) => {
+      if (e.target === modal) modal.classList.add('hidden');
+    });
+
+    // Tài liệu popover
+    if (docLink && popover) {
+      docLink.addEventListener('click', (e) => {
+        e.preventDefault();
+        const rect = docLink.getBoundingClientRect();
+        popover.style.top = (rect.top + window.scrollY + rect.height/2 - 20) + 'px';
+        popover.style.left = (rect.right + 15) + 'px';
+        popover.classList.remove('hidden');
+        setTimeout(() => popover.classList.add('hidden'), 3000);
+      });
+    }
+
+    // Ẩn popover khi click ra ngoài
+    document.addEventListener('click', (e) => {
+      if (popover && !popover.contains(e.target) && e.target !== docLink) {
+        popover.classList.add('hidden');
+      }
+    });
+
+    // Hỗ trợ link "Hỗ trợ" đã trỏ đến contact.html (giữ nguyên)
+
+  })();
+</script>
+</body></html>
