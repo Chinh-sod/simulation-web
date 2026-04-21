@@ -227,7 +227,7 @@ document.addEventListener('DOMContentLoaded', () => {
             const params = getCurrentParams();
             sessionStorage.setItem('simParams', JSON.stringify(params));
             try {
-                const response = await fetch('/simulate', {
+                const response = await fetch('simulate', {
                     method: 'POST',
                     headers: { 'Content-Type': 'application/json' },
                     body: JSON.stringify(params)

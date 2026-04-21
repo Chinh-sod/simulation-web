@@ -17,20 +17,26 @@ document.addEventListener('DOMContentLoaded', () => {
                     (1 + 0.18 * (params.TRA/100)) *
                     (1 + 0.10 * (params.LEA/100)) *
                     (1 + 0.08 * (params.FIR/100));
-    let risk = (25 * (params.INC/100) + 55 * (params.RAD/100) 
-                - 15 * (params.SPD/100) - 12 * (params.COP/100) 
-                - 8 * (params.SEN/100) - 10 * (params.SEI/100) 
-                - 12 * (params.TRA/100) - 6 * (params.LEA/100));
+    let risk = (35 * (params.INC/100) + 65 * (params.RAD/100)
+                - 12 * (params.SPD/100) - 10 * (params.COP/100)
+                -  8 * (params.SEN/100) -  8 * (params.SEI/100)
+                -  8 * (params.TRA/100) -  4 * (params.LEA/100));
     risk = Math.max(0, Math.min(100, risk));
     const growthRates = [];
     const revenues = [baseRevenue];
+    // learningRate: chiến lược RAD cao tích lũy tri thức nhanh hơn
+    const learningRate = 0.02 + 0.025 * (params.RAD / 100);
+    // saturationRate: chiến lược INC cao + RAD thấp bão hòa sớm hơn
+    const saturationRate = 0.005 + 0.025 * (params.INC / 100) * (1 - params.RAD / 100);
     for (let t = 0; t < years.length - 1; t++) {
-      const radEfficiency = t < 2 ? 0.4 : 1.0;
+      const radEfficiency = Math.min(1.0, 0.4 + t * 0.15);
+      const learningFactor = 1 + learningRate * t;
+      const marketSaturation = Math.max(0.5, 1 - saturationRate * t * t);
       let baseGrowth = 0.065 * (params.INC/100) 
                      + 0.105 * (params.RAD/100 * radEfficiency)
                      + 0.025 * (params.SPD/100)
                      + 0.015 * (params.COP/100);
-      let growth = baseGrowth * multDyn;
+      let growth = baseGrowth * multDyn * learningFactor * marketSaturation;
       const totalInv = params.INC + params.RAD;
       if (totalInv > 110) growth *= (1 - 0.005 * (totalInv - 110));
       growthRates.push(growth * 100);
@@ -61,7 +67,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const radar = simResult.radar;
   
   // Aggregate Score
-  const growthScore = Math.min(100, Math.max(0, growthAvg * 8));
+  const growthScore = Math.min(100, Math.max(0, growthAvg * 4));
   const riskScorePart = 100 - risk;
   const aggScore = Math.round((growthScore * 0.5 + riskScorePart * 0.5));
   
@@ -85,12 +91,12 @@ document.addEventListener('DOMContentLoaded', () => {
   const riskLabel = document.getElementById('riskLabel');
   const riskDesc = document.getElementById('riskDescription');
   let riskLevel = '';
-  if (risk < 5) {
+  if (risk < 10) {
     riskLevel = 'Thấp';
     riskLabel.textContent = 'Cảnh Báo Thấp';
     riskLabel.className = 'text-xs font-bold uppercase tracking-widest text-green-600';
     riskDesc.textContent = 'Rủi ro thấp, môi trường kinh doanh ổn định.';
-  } else if (risk <= 15) {
+  } else if (risk <= 25) {
     riskLevel = 'Trung bình';
     riskLabel.textContent = 'Cảnh Báo Trung Bình';
     riskLabel.className = 'text-xs font-bold uppercase tracking-widest text-yellow-600';
